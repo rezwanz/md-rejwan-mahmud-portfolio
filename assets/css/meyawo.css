@@ -12254,3 +12254,73 @@ pre .code {
   font-weight: bold;
   color: #333;
 }
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: #333;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0077b5;
+  transform: scale(1.2);
+}
+
+
+.section-subtitle {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6c757d;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.experience-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-card .icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.experience-card .description {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.col-md-6, .col-lg-3 {
+  display: flex;
+}
