@@ -12324,3 +12324,56 @@ pre .code {
 .col-md-6, .col-lg-3 {
   display: flex;
 }
+
+.education-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+}
+
+.education-card .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.education-card .institution {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.education-card .date {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.education-card .description {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edu-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
