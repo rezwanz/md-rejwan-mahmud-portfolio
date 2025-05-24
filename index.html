@@ -117,7 +117,7 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
 
-                <!-- Each skill as a slide -->
+                <!-- Skills -->
                 <div class="swiper-slide skill">
                     <i class="fa-brands fa-html5" style="font-size: 40px; color: #E34F26;"></i>
                     <span>HTML5</span>
@@ -692,17 +692,22 @@
 <script>
     const swiper = new Swiper('.mySwiper', {
         slidesPerView: 8,
-        spaceBetween: 10,
+        spaceBetween: 20,
         loop: true,
+        speed: 4000,
         autoplay: {
-            delay: 1500,
+            delay: 0,
             disableOnInteraction: false,
         },
+        freeMode: true,
+        freeModeMomentum: false,
+        grabCursor: true,
         breakpoints: {
-            1024: { slidesPerView: 5 },
-            768: { slidesPerView: 3 },
+            1200: { slidesPerView: 8 },
+            992: { slidesPerView: 6 },
+            768: { slidesPerView: 4 },
             480: { slidesPerView: 2 },
-            0: { slidesPerView: 1 },
+            0: { slidesPerView: 1 }
         }
     });
 </script>

@@ -12233,15 +12233,41 @@ pre .code {
   flex-direction: column;
   align-items: center;
   font-size: 14px;
-  padding: 10px;
+  padding: 15px;
+  text-align: center;
 }
+
 .skill img {
   width: 40px;
   height: 40px;
   margin-bottom: 5px;
 }
+
 .swiper {
-  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.swiper::before,
+.swiper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.swiper::before {
+  left: 0;
+  background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+.swiper::after {
+  right: 0;
+  background: linear-gradient(to left, white 0%, transparent 100%);
 }
 .skill span {
   font-size: 16px;
