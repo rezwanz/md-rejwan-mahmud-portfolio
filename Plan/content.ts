@@ -108,6 +108,15 @@ export const education = [
 
 export const projects = [
   {
+    title: "Etripi.com",
+    tech: ["HTML", "CSS", "Bootstrap", "Tailwind", "JavaScript", "PHP", "Laravel", "Livewire", "React", "MySQL"],
+    description:
+      "A comprehensive online booking platform enabling users to search, compare, and book hotels seamlessly. Includes advanced features for room management, dynamic pricing, real-time availability, partner dashboards, and AI-assisted property descriptions for a smooth experience for both travelers and property owners.",
+    associatedWith: "Codeware Limited",
+    github: "", // add link if available
+    live: "https://etripi.com/",
+  },
+  {
     title: "goRMG ERP",
     tech: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "Laravel", "Vue.js", "MySQL"],
     description:

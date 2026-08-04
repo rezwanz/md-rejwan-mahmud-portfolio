@@ -20,8 +20,12 @@ export default function Education() {
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {education.map((item, i) => (
-            <SectionReveal key={item.institution} delay={i * 0.1}>
-              <div className="flex gap-4 rounded-2xl border border-border-light bg-bg-light p-6 dark:border-border dark:bg-bg">
+            <SectionReveal
+              key={item.institution}
+              delay={i * 0.1}
+              className="h-full"
+            >
+              <div className="flex h-full gap-4 rounded-2xl border border-border-light bg-bg-light p-6 dark:border-border dark:bg-bg">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <GraduationCap size={20} />
                 </span>

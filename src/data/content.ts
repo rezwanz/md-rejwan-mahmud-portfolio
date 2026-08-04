@@ -204,6 +204,26 @@ export const education: EducationItem[] = [
 
 export const projects: Project[] = [
   {
+    title: "Etripi.com",
+    description:
+      "A comprehensive online booking platform enabling users to search, compare, and book hotels seamlessly. Includes advanced features for room management, dynamic pricing, real-time availability, partner dashboards, and AI-assisted property descriptions for a smooth experience for both travelers and property owners.",
+    tags: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Tailwind",
+      "JavaScript",
+      "PHP",
+      "Laravel",
+      "Livewire",
+      "React",
+      "MySQL",
+    ],
+    category: "Full-stack",
+    associatedWith: "Codeware Limited",
+    live: "https://etripi.com/",
+  },
+  {
     title: "goRMG ERP",
     description:
       "An ERP for the garments industry to streamline operations; contributed to Protracker, a cloud-based tool for tracking orders, production, shipping, and invoicing.",
