@@ -1,0 +1,42 @@
+import type { IconType } from "react-icons";
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiBootstrap,
+  SiJquery,
+  SiVuedotjs,
+  SiTailwindcss,
+  SiPhp,
+  SiLaravel,
+  SiPython,
+  SiCplusplus,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiGitlab,
+  SiDocker,
+  SiLinux,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
+
+export const skillIconMap: Record<string, IconType> = {
+  html5: SiHtml5,
+  css3: SiCss,
+  javascript: SiJavascript,
+  bootstrap: SiBootstrap,
+  jquery: SiJquery,
+  vuedotjs: SiVuedotjs,
+  tailwindcss: SiTailwindcss,
+  php: SiPhp,
+  laravel: SiLaravel,
+  python: SiPython,
+  java: FaJava,
+  cplusplus: SiCplusplus,
+  mysql: SiMysql,
+  git: SiGit,
+  github: SiGithub,
+  gitlab: SiGitlab,
+  docker: SiDocker,
+  linux: SiLinux,
+};
