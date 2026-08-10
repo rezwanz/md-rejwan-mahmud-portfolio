@@ -12,6 +12,8 @@ export interface SocialLink {
 export interface SkillItem {
   name: string;
   icon: string;
+  url: string;
+  color?: string;
 }
 
 export interface SkillGroup {
@@ -68,13 +70,7 @@ export const site = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/rezwanz", icon: "github" },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/md-rejwan-mahmud",
-    icon: "linkedin",
-  },
-  { label: "X", href: "https://x.com/rezwanzzz", icon: "x" },
+  { label: "Email", href: `mailto:${site.email}`, icon: "mail" },
   {
     label: "Facebook",
     href: "https://www.facebook.com/mrm.shakil",
@@ -85,7 +81,13 @@ export const socialLinks: SocialLink[] = [
     href: "https://www.instagram.com/rezwanzz/",
     icon: "instagram",
   },
-  { label: "Email", href: `mailto:${site.email}`, icon: "mail" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/md-rejwan-mahmud",
+    icon: "linkedin",
+  },
+  { label: "X", href: "https://x.com/rezwanzzz", icon: "x" },
+  { label: "GitHub", href: "https://github.com/rezwanz", icon: "github" },
 ];
 
 export const about = {
@@ -104,37 +106,128 @@ export const skillGroups: SkillGroup[] = [
   {
     category: "Frontend",
     items: [
-      { name: "HTML5", icon: "html5" },
-      { name: "CSS3", icon: "css3" },
-      { name: "JavaScript", icon: "javascript" },
-      { name: "Bootstrap", icon: "bootstrap" },
-      { name: "jQuery", icon: "jquery" },
-      { name: "Vue.js", icon: "vuedotjs" },
-      { name: "Tailwind CSS", icon: "tailwindcss" },
+      {
+        name: "HTML5",
+        icon: "html5",
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        color: "#E34F26",
+      },
+      {
+        name: "CSS3",
+        icon: "css3",
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        color: "#1572B6",
+      },
+      {
+        name: "JavaScript",
+        icon: "javascript",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        color: "#F7DF1E",
+      },
+      {
+        name: "Bootstrap",
+        icon: "bootstrap",
+        url: "https://getbootstrap.com/",
+        color: "#7952B3",
+      },
+      {
+        name: "jQuery",
+        icon: "jquery",
+        url: "https://jquery.com/",
+        color: "#0769AD",
+      },
+      {
+        name: "Vue.js",
+        icon: "vuedotjs",
+        url: "https://vuejs.org/",
+        color: "#4FC08D",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "tailwindcss",
+        url: "https://tailwindcss.com/",
+        color: "#06B6D4",
+      },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "PHP", icon: "php" },
-      { name: "Laravel", icon: "laravel" },
-      { name: "Python", icon: "python" },
-      { name: "Java", icon: "java" },
-      { name: "C++", icon: "cplusplus" },
+      {
+        name: "PHP",
+        icon: "php",
+        url: "https://www.php.net/",
+        color: "#777BB4",
+      },
+      {
+        name: "Laravel",
+        icon: "laravel",
+        url: "https://laravel.com/",
+        color: "#FF2D20",
+      },
+      {
+        name: "Python",
+        icon: "python",
+        url: "https://www.python.org/",
+        color: "#3776AB",
+      },
+      {
+        name: "Java",
+        icon: "java",
+        url: "https://www.java.com/",
+        color: "#E76F00",
+      },
+      {
+        name: "C++",
+        icon: "cplusplus",
+        url: "https://isocpp.org/",
+        color: "#00599C",
+      },
     ],
   },
   {
     category: "Database",
-    items: [{ name: "MySQL", icon: "mysql" }],
+    items: [
+      {
+        name: "MySQL",
+        icon: "mysql",
+        url: "https://www.mysql.com/",
+        color: "#4479A1",
+      },
+    ],
   },
   {
     category: "Tools & DevOps",
     items: [
-      { name: "Git", icon: "git" },
-      { name: "GitHub", icon: "github" },
-      { name: "GitLab", icon: "gitlab" },
-      { name: "Docker", icon: "docker" },
-      { name: "Linux", icon: "linux" },
+      {
+        name: "Git",
+        icon: "git",
+        url: "https://git-scm.com/",
+        color: "#F05032",
+      },
+      {
+        name: "GitHub",
+        icon: "github",
+        url: "https://github.com/",
+      },
+      {
+        name: "GitLab",
+        icon: "gitlab",
+        url: "https://about.gitlab.com/",
+        color: "#FC6D26",
+      },
+      {
+        name: "Docker",
+        icon: "docker",
+        url: "https://www.docker.com/",
+        color: "#2496ED",
+      },
+      {
+        name: "Linux",
+        icon: "linux",
+        url: "https://www.linux.org/",
+        color: "#FCC624",
+      },
     ],
   },
 ];
