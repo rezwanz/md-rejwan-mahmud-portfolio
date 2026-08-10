@@ -36,7 +36,7 @@ export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-4xl px-6 py-24 text-center">
       <SectionReveal>
-        <p className="font-mono-accent text-sm text-primary">06. Contact</p>
+        <p className="font-mono-accent text-sm text-primary">07. Contact</p>
         <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
           {contact.heading}
         </h2>

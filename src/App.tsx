@@ -3,10 +3,13 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
-import Projects from "./components/Projects";
 import Education from "./components/Education";
+import Projects from "./components/Projects";
+import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
+import CommandPalette from "./components/CommandPalette";
 
 function App() {
   return (
@@ -17,14 +20,17 @@ function App() {
       >
         Skip to content
       </a>
+      <ScrollProgress />
+      <CommandPalette />
       <Navbar />
       <main id="main-content">
         <Hero />
         <About />
         <Skills />
         <Experience />
-        <Projects />
         <Education />
+        <Projects />
+        <Services />
         <Contact />
       </main>
       <Footer />

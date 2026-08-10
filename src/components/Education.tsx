@@ -11,7 +11,7 @@ export default function Education() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionReveal>
           <p className="font-mono-accent text-sm text-primary">
-            05. Education
+            04. Education
           </p>
           <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
             Academic Background

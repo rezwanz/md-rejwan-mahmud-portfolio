@@ -48,9 +48,15 @@ export interface Project {
   featured?: boolean;
 }
 
+export interface ServiceItem {
+  title: string;
+  description: string;
+  icon: "code" | "server" | "database" | "layers" | "smartphone";
+}
+
 export const site = {
   name: "Md. Rejwan Mahmud",
-  initials: "RM",
+  initials: "rejwan.dev",
   role: "Software Engineer",
   roles: ["Software Engineer", "Full-Stack Developer", "Problem Solver"],
   tagline:
@@ -58,6 +64,7 @@ export const site = {
   location: "Dhaka, Bangladesh",
   email: "rejwan.dev24@gmail.com",
   resumeUrl: "/assets/files/resume-md-rejwan-mahmud.pdf",
+  githubUsername: "rezwanz",
 };
 
 export const socialLinks: SocialLink[] = [
@@ -129,6 +136,39 @@ export const skillGroups: SkillGroup[] = [
       { name: "Docker", icon: "docker" },
       { name: "Linux", icon: "linux" },
     ],
+  },
+];
+
+export const services: ServiceItem[] = [
+  {
+    title: "Full-Stack Web Development",
+    description:
+      "End-to-end web applications with React/Vue front ends and Laravel/PHP back ends, built for performance and long-term maintainability.",
+    icon: "code",
+  },
+  {
+    title: "Backend & API Development",
+    description:
+      "RESTful APIs, business logic, and system integrations built on Laravel and PHP, focused on clean architecture and reliability.",
+    icon: "server",
+  },
+  {
+    title: "Database Design & Optimization",
+    description:
+      "MySQL schema design, query tuning, and structural refactors to improve performance and keep data integrity as systems grow.",
+    icon: "database",
+  },
+  {
+    title: "ERP & Business Systems",
+    description:
+      "Custom ERP modules for production, ordering, invoicing, and reporting — tailored to real operational workflows, not generic templates.",
+    icon: "layers",
+  },
+  {
+    title: "Responsive UI Implementation",
+    description:
+      "Pixel-accurate, accessible, mobile-first interfaces with Tailwind CSS that hold up across devices and screen sizes.",
+    icon: "smartphone",
   },
 ];
 
@@ -292,7 +332,8 @@ export const nav = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
+  { label: "Projects", href: "#projects" },
+  { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];

@@ -84,7 +84,7 @@ export default function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
       <SectionReveal>
-        <p className="font-mono-accent text-sm text-primary">04. Projects</p>
+        <p className="font-mono-accent text-sm text-primary">05. Projects</p>
         <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
           Things I've Built
         </h2>
