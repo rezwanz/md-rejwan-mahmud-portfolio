@@ -12,7 +12,7 @@ export const personal = {
   ],
   tagline:
     "I build scalable, high-quality web & mobile applications across the full stack.",
-  bio: `I am a Full-Stack Software Engineer with 2+ years of experience in web and
+  bio: `I am a Full-Stack Software Engineer with 4+ years of experience in web and
 mobile app development. Skilled in front-end, back-end, and database
 management, I deliver high-quality, scalable solutions that boost
 performance, cut costs, and enhance user experience.`,
@@ -32,11 +32,11 @@ performance, cut costs, and enhance user experience.`,
 export const skills = [
   {
     category: "Frontend",
-    items: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery", "Vue.js", "Tailwind CSS"],
+    items: ["HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "JavaScript", "jQuery", "Vue.js"],
   },
   {
     category: "Backend",
-    items: ["PHP", "Laravel", "Python", "Java", "C++"],
+    items: ["PHP", "Laravel", "Python", "C++", "Java"],
   },
   {
     category: "Database",
@@ -52,14 +52,14 @@ export const experience = [
   {
     role: "Software Engineer",
     company: "Codeware Limited",
-    date: "May 2024 - Present",
+    date: "May 2025 - Present",
     description:
       "Developed and implemented new backend features, fixed critical bugs, and optimized database structures and queries. Provided emergency technical support and collaborated across teams.",
   },
   {
     role: "Software Engineer",
     company: "Skylark Soft Limited",
-    date: "Apr 2024 - Mar 2025",
+    date: "Apr 2024 - Apr 2025",
     description:
       "Developed backend and frontend features, fixed critical bugs, and created reports. Refactored ERP modules for improved performance and efficiency.",
   },
@@ -86,7 +86,7 @@ export const experience = [
   },
 ];
 
-// NOTE: your Codeware (May 2024-Present) and Skylark Soft (Apr 2024-Mar 2025)
+// NOTE: your Codeware (May 2025-Present) and Skylark Soft (Apr 2024-Apr 2025)
 // dates overlap — worth double-checking these before publishing, in case one
 // should say "Present" and the other an earlier end date.
 

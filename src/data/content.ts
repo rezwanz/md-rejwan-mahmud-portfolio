@@ -70,7 +70,6 @@ export const site = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { label: "Email", href: `mailto:${site.email}`, icon: "mail" },
   {
     label: "Facebook",
     href: "https://www.facebook.com/mrm.shakil",
@@ -88,12 +87,13 @@ export const socialLinks: SocialLink[] = [
   },
   { label: "X", href: "https://x.com/rezwanzzz", icon: "x" },
   { label: "GitHub", href: "https://github.com/rezwanz", icon: "github" },
+  { label: "Email", href: `mailto:${site.email}`, icon: "mail" },
 ];
 
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I am a Full-Stack Software Engineer with 2+ years of experience in web and mobile app development. Skilled in front-end, back-end, and database management, I deliver high-quality, scalable solutions that boost performance, cut costs, and enhance user experience.",
+    "I am a Full-Stack Software Engineer with 4+ years of experience in web and mobile app development. Skilled in front-end, back-end, and database management, I deliver high-quality, scalable solutions that boost performance, cut costs, and enhance user experience.",
   ],
   facts: [
     { label: "Location", value: site.location },
@@ -131,6 +131,12 @@ export const skillGroups: SkillGroup[] = [
         color: "#7952B3",
       },
       {
+        name: "Tailwind CSS",
+        icon: "tailwindcss",
+        url: "https://tailwindcss.com/",
+        color: "#06B6D4",
+      },
+      {
         name: "jQuery",
         icon: "jquery",
         url: "https://jquery.com/",
@@ -141,12 +147,6 @@ export const skillGroups: SkillGroup[] = [
         icon: "vuedotjs",
         url: "https://vuejs.org/",
         color: "#4FC08D",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "tailwindcss",
-        url: "https://tailwindcss.com/",
-        color: "#06B6D4",
       },
     ],
   },
@@ -275,7 +275,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Codeware Limited",
-    start: "May 2024",
+    start: "May 2025",
     end: "Present",
     bullets: [
       "Developed and implemented new backend features, fixed critical bugs, and optimized database structures and queries.",
@@ -286,7 +286,7 @@ export const experience: ExperienceItem[] = [
     role: "Software Engineer",
     company: "Skylark Soft Limited",
     start: "Apr 2024",
-    end: "Mar 2025",
+    end: "Apr 2025",
     bullets: [
       "Developed backend and frontend features, fixed critical bugs, and created reports.",
       "Refactored ERP modules for improved performance and efficiency.",
@@ -353,8 +353,8 @@ export const projects: Project[] = [
       "Tailwind",
       "JavaScript",
       "React",
-      "Vue.js",
       "Next.js",
+      "Vue.js",
       "PHP",
       "Laravel",
       "Livewire",
