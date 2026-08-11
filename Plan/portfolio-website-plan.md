@@ -61,10 +61,12 @@ Include a **light/dark mode toggle** (default to dark — reads more premium for
 3. **About** — short bio, photo (optional stylized/duotone), quick facts (location, years of experience, current focus), maybe a "currently learning" badge.
 4. **Skills** — grouped by category (Frontend, Backend, Database, Tools/DevOps) as icon + label chips. Your current site uses an infinite auto-scrolling marquee of tech logos (Swiper.js) — worth keeping, just re-themed with Framer Motion's `animate` + `repeat: Infinity` instead (removes a dependency, same effect).
 5. **Experience/Timeline** — vertical timeline component, role, company, dates, 2-3 bullet achievements each.
-6. **Projects** — grid of cards: image/screenshot, title, short description, tech-stack tags, GitHub + live-demo links. Include a filter by tag (All / Frontend / Full-stack / etc.) if 6+ projects.
-7. **Education/Certifications** — compact list or cards.
-8. **Contact** — form (via Formspree/EmailJS), plus direct email/social links as backup. Success/error state handled client-side.
-9. **Footer** — copyright, quick links, "built with" note (optional), back-to-top button.
+6. **Education** — compact list or cards: degree, institution, dates, details.
+7. **Projects** — grid of cards: image/screenshot, title, short description, tech-stack tags, GitHub + live-demo links. Include a filter by tag (All / Frontend / Full-stack / etc.) if 6+ projects.
+8. **Certifications** — grid of cards (3 per row on desktop), placed after Projects so it reads as supporting credentials rather than a headline section. Title, issuer, issue date, credential ID, optional "show credential" link, optional certificate image, skill tags.
+9. **Services** — cards of offered services.
+10. **Contact** — form (via Formspree/EmailJS), plus direct email/social links as backup. Success/error state handled client-side.
+11. **Footer** — copyright, quick links, "built with" note (optional), back-to-top button.
 
 Optional additions worth considering:
 - **Testimonials** section if you have any client/colleague quotes.
@@ -80,6 +82,7 @@ Optional additions worth considering:
 - 4-8 projects: title, 2-3 sentence description, tech tags, GitHub link, live link, 1 screenshot each.
 - Work/experience history with dates and bullet achievements.
 - Education history.
+- Licenses & certifications: title, issuer, issue date, credential ID, verify URL or certificate image, related skills.
 - Resume PDF (for the download button).
 - Profile photo (optional but recommended — builds trust).
 - Contact email + social links (GitHub, LinkedIn, X/Twitter, etc.).
@@ -119,13 +122,14 @@ DESIGN:
 SECTIONS (in order): Navbar, Hero (name, rotating role typewriter text,
 tagline, CTA buttons, social icons), About (bio + quick facts), Skills
 (grouped icon chips: Frontend/Backend/Tools), Experience (vertical timeline),
-Projects (filterable card grid with tech tags + GitHub/live links), Education,
-Contact (working form via Formspree — I'll provide the endpoint — plus direct
-email/social links), Footer.
+Education, Projects (filterable card grid with tech tags + GitHub/live links),
+Certifications (card grid, 3 per row, with credential links/images), Services
+(cards of offered services), Contact (working form via Formspree — I'll
+provide the endpoint — plus direct email/social links), Footer.
 
-CONTENT STRUCTURE: put all editable content (bio, skills, projects,
-experience, education) in a single data/content.ts file so it's easy to
-update without touching components.
+CONTENT STRUCTURE: put all editable content (bio, skills, experience,
+education, projects, certifications, services) in a single data/content.ts
+file so it's easy to update without touching components.
 
 DEPLOYMENT: include a GitHub Actions workflow (.github/workflows/deploy.yml)
 that builds the Vite app and deploys dist/ to GitHub Pages on every push to

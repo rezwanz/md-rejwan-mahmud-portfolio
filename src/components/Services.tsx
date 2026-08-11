@@ -18,7 +18,7 @@ export default function Services() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <SectionReveal>
-          <p className="font-mono-accent text-sm text-primary">06. Services</p>
+          <p className="font-mono-accent text-sm text-primary">07. Services</p>
           <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
             What I Can Help With
           </h2>

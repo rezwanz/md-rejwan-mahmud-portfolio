@@ -38,6 +38,16 @@ export interface EducationItem {
   details?: string;
 }
 
+export interface CertificationItem {
+  title: string;
+  issuer: string;
+  issued: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  certificateImage?: string;
+  skills?: string[];
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -341,6 +351,67 @@ export const education: EducationItem[] = [
   },
 ];
 
+export const certifications: CertificationItem[] = [
+  {
+    title: "PHP with Laravel Framework",
+    issuer: "BASIS",
+    issued: "Jul 2022",
+    credentialId: "BASIS76/OID23/PHP6/17",
+    certificateImage: "/assets/images/certificates/basis-php-laravel-framework.jpg",
+    skills: [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "jQuery",
+      "PHP",
+      "Laravel",
+      "Web Development",
+    ],
+  },
+  {
+    title: "Professional English Communication Skill",
+    issuer: "WSDA New Zealand",
+    issued: "Jun 2022",
+    credentialId: "BASIS76/BITMD23/PHP6",
+    certificateImage:
+      "/assets/images/certificates/wsda-professional-english-communication.jpg",
+    skills: ["Communication", "Business English"],
+  },
+  {
+    title: "Introduction to Psychology",
+    issuer: "Coursera",
+    issued: "Jul 2020",
+    credentialId: "UT242ZX4Y8AK",
+    credentialUrl: "https://coursera.org/verify/UT242ZX4Y8AK",
+    skills: ["Psychological Assessment"],
+  },
+  {
+    title: "Python Data Structures",
+    issuer: "Coursera",
+    issued: "Jul 2020",
+    credentialId: "FZ9HUYNBLGEL",
+    credentialUrl: "https://coursera.org/verify/FZ9HUYNBLGEL",
+    skills: ["Python (Programming Language)"],
+  },
+  {
+    title: "Introduction to HTML",
+    issuer: "Coursera",
+    issued: "Jul 2020",
+    credentialId: "6HXAFSZ5EX7E",
+    credentialUrl: "https://www.coursera.org/api/certificate.v1/pdf/6HXAFSZ5EX7E",
+    skills: ["HTML5"],
+  },
+  {
+    title: "Programming for Everybody (Getting Started with Python)",
+    issuer: "Coursera",
+    issued: "Jun 2020",
+    credentialId: "28EZD4J6UWWT",
+    credentialUrl: "https://coursera.org/verify/28EZD4J6UWWT",
+    skills: ["Python (Programming Language)"],
+  },
+];
+
 export const projects: Project[] = [
   {
     title: "Etripi.com",
@@ -397,6 +468,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "Tailwind", "WordPress", "PHP"],
     category: "Frontend",
     associatedWith: "DevTechGuru Ltd. (client: Wyss Institute, Harvard)",
+    live: "https://wyss.harvard.edu/collaboration/wyss-diagnostics-accelerator/",
   },
   {
     title: "GURU ERP",
@@ -413,6 +485,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "Ajax", "PHP", "MySQL"],
     category: "Full-stack",
     associatedWith: "DevTechGuru Ltd.",
+    live: "https://qkaf.org/home.php",
   },
 ];
 
@@ -436,6 +509,7 @@ export const nav = [
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
