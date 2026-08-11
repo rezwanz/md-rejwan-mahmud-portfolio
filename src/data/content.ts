@@ -119,16 +119,16 @@ export const skillGroups: SkillGroup[] = [
         color: "#1572B6",
       },
       {
-        name: "JavaScript",
-        icon: "javascript",
-        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-        color: "#F7DF1E",
-      },
-      {
         name: "Bootstrap",
         icon: "bootstrap",
         url: "https://getbootstrap.com/",
         color: "#7952B3",
+      },
+      {
+        name: "JavaScript",
+        icon: "javascript",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        color: "#F7DF1E",
       },
       {
         name: "Tailwind CSS",
