@@ -3,7 +3,7 @@ import { ArrowRight, Mail } from "lucide-react";
 import { site, socialLinks } from "../data/content";
 import { useTypewriter } from "../hooks/useTypewriter";
 import { socialIconMap } from "../lib/social-icons";
-import AuroraArcs from "./AuroraArcs";
+// import AuroraArcs from "./AuroraArcs";
 
 export default function Hero() {
   const role = useTypewriter(site.roles);
@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="animate-blob absolute right-10 top-1/2 h-56 w-56 rounded-full bg-primary-light/20 blur-3xl [animation-delay:4s]" />
       </div>
 
-      <AuroraArcs />
+      {/*<AuroraArcs />*/}
 
       <div className="mx-auto max-w-6xl">
         <motion.p
