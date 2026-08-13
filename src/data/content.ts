@@ -439,7 +439,7 @@ export const projects: Project[] = [
   {
     title: "goRMG ERP",
     description:
-      "An ERP for the garments industry to streamline operations; contributed to Protracker, a cloud-based tool for tracking orders, production, shipping, and invoicing.",
+      "A multi-vendor ERP for the garments industry, deployed across 20+ clients to streamline operations; contributed to Protracker, a cloud-based tool for tracking orders, production, shipping, and invoicing.",
     tags: [
       "HTML",
       "CSS",
@@ -473,10 +473,10 @@ export const projects: Project[] = [
   {
     title: "GURU ERP",
     description:
-      "A web-based ERP solution to streamline business processes, improve inter-departmental efficiency, and enhance data management for a Saudi Arabia-based company.",
+      "A multi-vendor, web-based ERP solution to streamline business processes, improve inter-departmental efficiency, and enhance data management — deployed for Three Arrows Plastic Factory (Saudi Arabia) and Uniglory Ltd.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "Ajax", "PHP", "MySQL"],
     category: "Full-stack",
-    associatedWith: "DevTechGuru Ltd.",
+    associatedWith: "DevTechGuru Ltd. (clients: Three Arrows Plastic Factory, Uniglory Ltd.)",
   },
   {
     title: "CMS for QK Ahmad Foundation",
