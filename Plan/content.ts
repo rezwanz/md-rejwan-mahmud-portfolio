@@ -420,6 +420,56 @@ export const certifications: CertificationItem[] = [
 
 export const projects: Project[] = [
   {
+    title: "Property Management System (PMS)",
+    description:
+      "An ongoing Property Management System (currently in development) for managing properties, tenants, leases, and related operations.",
+    tags: ["HTML", "CSS", "Tailwind", "JavaScript", "Vue.js", "PHP", "Laravel", "MySQL"],
+    category: "Full-stack",
+    associatedWith: "Codeware Limited",
+  },
+  {
+    title: "Al Zahra Consultancy",
+    description:
+      "A business management platform for a consultancy company, covering Customer Service Management, Employee Management, Tax, Accounting, and Service Management, alongside the company's public-facing website.",
+    tags: ["HTML", "CSS", "Tailwind", "JavaScript", "PHP", "Laravel", "Livewire", "MySQL"],
+    category: "Full-stack",
+    associatedWith: "Codeware Limited",
+    live: "https://alzahrabd.com/",
+  },
+  {
+    title: "Bangladesh Medical University (BMU)",
+    description:
+      "The official website for Bangladesh Medical University, showcasing research papers, doctor and faculty profiles, student information, thesis papers, and department facilities.",
+    tags: ["HTML", "CSS", "Tailwind", "PHP", "Laravel", "Filament", "Livewire", "MySQL"],
+    category: "Full-stack",
+    associatedWith: "Codeware Limited",
+    live: "https://www.bmu.ac.bd/",
+  },
+  {
+    title: "Winrooms.com",
+    description:
+      "A booking platform for hotels and accommodations, similar in scope to Etripi.com — enabling users to search, compare, and book rooms with room management, dynamic pricing, real-time availability, and partner dashboards.",
+    tags: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Tailwind",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Vue.js",
+      "PHP",
+      "Laravel",
+      "Livewire",
+      "Alpine.js",
+      "Redis",
+      "MySQL",
+    ],
+    category: "Full-stack",
+    associatedWith: "Codeware Limited",
+    live: "https://winrooms.com/",
+  },
+  {
     title: "Etripi.com",
     description:
       "A comprehensive online booking platform enabling users to search, compare, and book hotels seamlessly. Includes advanced features for room management, dynamic pricing, real-time availability, partner dashboards, and AI-assisted property descriptions for a smooth experience for both travelers and property owners.",
@@ -435,6 +485,7 @@ export const projects: Project[] = [
       "PHP",
       "Laravel",
       "Livewire",
+      "Alpine.js",
       "Redis",
       "MySQL",
     ],
