@@ -416,24 +416,24 @@ export const projects: Project[] = [
   {
     title: "Property Management System (PMS)",
     description:
-      "An ongoing Property Management System (currently in development) for managing properties, tenants, leases, and related operations.",
-    tags: ["HTML", "CSS", "Tailwind", "JavaScript", "Vue.js", "PHP", "Laravel", "MySQL"],
+      "A multi-tenant SaaS Hotel PMS on a DB-per-tenant architecture, with two apps: a Super Admin panel for tenant onboarding, billing, and global hotel data, and a per-hotel Tenant PMS covering front desk, reservations, guest CRM, POS, night audit, and accounting.",
+    tags: ["HTML", "CSS", "Tailwind", "TypeScript", "Inertia.js", "Vue.js", "PHP", "Laravel", "MySQL"],
     category: "Full-stack",
     associatedWith: "Codeware Limited",
   },
   {
-    title: "Al Zahra Consultancy",
+    title: "Visa Agency CRM & Management System",
     description:
-      "Visa Agency CRM & Management Platform — A comprehensive, multilingual (AR/BN/EN) multi-tenant CRM system built for a visa services agency, combining a public marketing website with a full back-office suite. Features include customer and visit tracking, service catalog with packages, invoice generation and PDF export, payment processing, partner & employee commission management, expense tracking, document management, a complete double-entry accounting module (chart of accounts, journal entries, ledger, trial balance), and 10+ financial/operational reports. Includes role-based access control, activity logging, email templates, and a CMS for managing the public site's content.",
+      "A multilingual (AR/BN/EN) multi-tenant CRM for Al Zahra Consultancy, a visa services agency — combining a marketing site with a back-office suite covering customer tracking, invoicing & payments, commissions, double-entry accounting, and financial reporting.",
     tags: ["HTML", "CSS", "Tailwind", "Alpine.js", "JavaScript", "PHP", "Laravel", "Livewire", "MySQL"],
     category: "Full-stack",
-    associatedWith: "Codeware Limited",
+    associatedWith: "Codeware Limited (client: Al Zahra Consultancy)",
     live: "https://alzahrabd.com/",
   },
   {
     title: "Bangladesh Medical University (BMU)",
     description:
-      "A university administration and research-management platform. Implemented an end-to-end Institutional Review Board (IRB) workflow handling ethics approval lifecycle — multi-stage reviewer assignment, extension/waiver requests, supervisor-change memos, and automated PDF certificate generation with public verification. Engineered governance portals for Academic & Syndicate meetings with agenda publishing, signed email attendance confirmation, and PDF meeting documents. Built a multilingual (English/Bengali) CMS supporting dynamic per-department subdomains, page-builder content, and news/notice publishing.",
+      "A university administration and research platform with an end-to-end IRB ethics-approval workflow, governance portals for Academic & Syndicate meetings with signed attendance confirmation, and a multilingual (EN/BN) CMS with per-department subdomains and news publishing.",
     tags: ["HTML", "CSS", "Tailwind", "Alpine.js", "PHP", "Laravel", "Livewire", "Filament", "MySQL"],
     category: "Full-stack",
     associatedWith: "Codeware Limited",
@@ -442,7 +442,7 @@ export const projects: Project[] = [
   {
     title: "Winrooms.com",
     description:
-      "A booking platform for hotels and accommodations, — enabling users to search, compare, and book rooms with room management, dynamic pricing, real-time availability, and partner dashboards.",
+      "A hotel & accommodation booking platform for searching, comparing, and booking rooms, with dynamic pricing, real-time availability, and partner dashboards for property management.",
     tags: [
       "HTML",
       "CSS",
@@ -466,7 +466,7 @@ export const projects: Project[] = [
   {
     title: "Etripi.com",
     description:
-      "A comprehensive online hotel and tour booking platform for Bangladesh, enabling travelers to search, compare, and book properties seamlessly while giving hotel partners full control over room management, dynamic pricing, and real-time availability. The platform features a partner portal for managing rate plans and pricing calendars, multi-role access control, a complete booking lifecycle covering checkout, cancellation, date-changes, and no-shows, integrated payment processing with popular local gateways, automated invoice generation, and a dedicated tour booking module — delivering a smooth, end-to-end experience for both travelers and property owners.",
+      "A hotel & tour booking platform for the Bangladesh market, with a partner portal for rate/availability management, local payment gateway integration, automated invoicing, and a dedicated tour booking module.",
     tags: [
       "HTML",
       "CSS",
