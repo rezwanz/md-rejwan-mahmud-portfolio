@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface SectionRevealProps {
@@ -12,6 +12,12 @@ export default function SectionReveal({
   delay = 0,
   className,
 }: SectionRevealProps) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}

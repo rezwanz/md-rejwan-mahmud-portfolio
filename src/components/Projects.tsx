@@ -92,7 +92,6 @@ export default function Projects() {
 
       <SectionReveal delay={0.1}>
         <div
-          role="tablist"
           aria-label="Filter projects by category"
           className="mt-8 flex flex-wrap gap-2"
         >
@@ -100,8 +99,7 @@ export default function Projects() {
             <button
               key={tag}
               type="button"
-              role="tab"
-              aria-selected={filter === tag}
+              aria-pressed={filter === tag}
               onClick={() => setFilter(tag)}
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 filter === tag

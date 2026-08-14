@@ -17,8 +17,18 @@ export function useTypewriter(
   const [wordIndex, setWordIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [reducedMotion] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
 
   useEffect(() => {
+    if (reducedMotion) {
+      setText(words[0] ?? "");
+      return;
+    }
+
     const currentWord = words[wordIndex % words.length];
 
     if (!isDeleting && text === currentWord) {
@@ -44,7 +54,7 @@ export function useTypewriter(
     );
 
     return () => clearTimeout(timeout);
-  }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pauseTime]);
+  }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pauseTime, reducedMotion]);
 
   return text;
 }

@@ -557,7 +557,7 @@ export const contact = {
   heading: "Get In Touch",
   subheading:
     "Have a project in mind or just want to say hi? My inbox is always open.",
-  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
+  formspreeEndpoint: "https://formspree.io/f/xwleqzln",
 };
 
 export const nav = [

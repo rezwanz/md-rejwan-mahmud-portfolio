@@ -1,6 +1,6 @@
 # Md. Rejwan Mahmud — Portfolio
 
-A single-page portfolio built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion. Fully static — deploys to GitHub Pages via GitHub Actions.
+A single-page portfolio built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion. Fully static — deploys to Cloudflare Pages (or GitHub Pages via the included GitHub Actions workflow).
 
 ## Stack
 
@@ -20,24 +20,29 @@ npm run preview  # preview the production build locally
 
 ## Editing content
 
-All site copy — bio, skills, experience, education, projects, social links — lives in
-[`src/data/content.ts`](src/data/content.ts). Edit that file to update the site; components
-don't need to change.
+All site copy — bio, skills, experience, education, projects, certifications, services, social links — lives in
+[`src/data/content.ts`](src/data/content.ts). Edit that file to update the site; components don't need to change.
+A reference mirror lives in [`Plan/content.ts`](Plan/content.ts) — re-sync it whenever `src/data/content.ts` changes.
 
-Things still marked as placeholders you should fill in before going live:
+## Before going live
 
-- `public/resume.pdf` (or update `site.resumeUrl` in `content.ts`) — the resume download button links here.
-- `contact.formspreeEndpoint` in `content.ts` — create a form at [Formspree](https://formspree.io) and paste your endpoint.
-- `public/og-image.png` — a 1200×630 social share image referenced by the Open Graph tags in `index.html`.
-- `public/CNAME` — currently a placeholder domain; replace with your real domain or delete the file if you're not using a custom domain.
-- Project `github` / `live` links in `content.ts` are empty for a few entries — add them if available.
-
-Also worth double-checking: the **Codeware Limited** (May 2024–Present) and **Skylark Soft Limited**
-(Apr 2024–Mar 2025) entries in `experience` have overlapping dates — confirm which end date is correct.
+- **Contact form:** wired to Formspree (`contact.formspreeEndpoint` in `content.ts`). Submissions go to your inbox at formspree.io — no server needed, works on any static host.
+- **Resume PDF:** replace `public/assets/files/resume-md-rejwan-mahmud.pdf` (or update `site.resumeUrl`
+  in `content.ts`). The navbar/footer download buttons link here.
+- **Project links:** a few entries in `projects` have no `live` and/or `github` link yet — add them
+  if available.
 
 ## Deployment
 
-`.github/workflows/deploy.yml` builds the app and deploys `dist/` to GitHub Pages on every push to `main`.
-In your repo: **Settings → Pages → Source → GitHub Actions**.
+### Cloudflare Pages (primary)
 
-For a custom domain via Cloudflare, see the deployment cheat-sheet in `Plan/portfolio-website-plan.md`.
+1. Push this repo to GitHub and connect it in the Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**.
+2. Cloudflare auto-detects Vite. Build command `npm run build`, output directory `dist`.
+3. Set your custom domain in **Custom domains**. Done — no other config needed (single-page anchor site, no routing).
+
+### GitHub Pages (alternative)
+
+`.github/workflows/deploy.yml` builds the app and deploys `dist/` to GitHub Pages on every push to `main`.
+In your repo: **Settings → Pages → Source → GitHub Actions**. The `public/CNAME` file points at `rejwan.dev`.
+
+For Cloudflare DNS setup, see the cheat-sheet in `Plan/portfolio-website-plan.md`.

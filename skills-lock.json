@@ -19,24 +19,6 @@
       "skillPath": ".github/skills/quality/html-css-best-practices/SKILL.md",
       "computedHash": "911ce724c313c8361bae4277ef414d555c27d356feeafb4f4ca2b91e16ab6c06"
     },
-    "modern-web-development": {
-      "source": "mindrally/skills",
-      "sourceType": "github",
-      "skillPath": "modern-web-development/SKILL.md",
-      "computedHash": "01f88bbb9650f319582b831f4cf41354df9a4520c96738c36b1fd201b4da087d"
-    },
-    "organization-best-practices": {
-      "source": "better-auth/skills",
-      "sourceType": "github",
-      "skillPath": "better-auth/organization/SKILL.md",
-      "computedHash": "27627eb3a13bd44eff3a5d890f96e7db052b623db90e01684f759abe3e7fe56b"
-    },
-    "pest-testing": {
-      "source": "spatie/freek.dev",
-      "sourceType": "github",
-      "skillPath": ".claude/skills/pest-testing/SKILL.md",
-      "computedHash": "16b9ee01b7eb3f527cd0c1cb3ec4ea22099211f6529534ba7b8b646cfec38d5b"
-    },
     "react-best-practices": {
       "source": "0xbigboss/claude-code",
       "sourceType": "github",
@@ -72,12 +54,6 @@
       "sourceType": "github",
       "skillPath": "plugins/developer-kit-typescript/skills/tailwind-css-patterns/SKILL.md",
       "computedHash": "6092620c3af955a46ea2b94ca8a40197ac8392e6bbdc8c7515659328b186c770"
-    },
-    "tailwindcss": {
-      "source": "mindrally/skills",
-      "sourceType": "github",
-      "skillPath": "tailwindcss/SKILL.md",
-      "computedHash": "b1d95ac9242e613966fb11ed413fd2ff61f04641e4e8c1418e0e8258573fcc68"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",

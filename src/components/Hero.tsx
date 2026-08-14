@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-3 h-10 font-heading text-2xl font-semibold text-muted sm:text-3xl"
+          className="mt-3 min-h-10 font-heading text-2xl font-semibold text-muted sm:text-3xl"
         >
           {role}
           <span className="animate-pulse text-primary">|</span>

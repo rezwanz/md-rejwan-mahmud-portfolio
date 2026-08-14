@@ -9,9 +9,17 @@ type Status = "idle" | "sending" | "success" | "error";
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
 
+  const isConfigured = !contact.formspreeEndpoint.includes("YOUR_FORM_ID");
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
+
+    if (!isConfigured) {
+      setStatus("error");
+      return;
+    }
+
     const data = new FormData(form);
     setStatus("sending");
 
@@ -111,7 +119,9 @@ export default function Contact() {
             {status === "error" && (
               <p className="flex items-center gap-2 text-sm text-red-500">
                 <AlertCircle size={16} />
-                Something went wrong. Please email me directly instead.
+                {isConfigured
+                  ? "Something went wrong. Please email me directly instead."
+                  : "The contact form isn't configured yet. Please email me directly instead."}
               </p>
             )}
           </div>
