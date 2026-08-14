@@ -424,8 +424,8 @@ export const projects: Project[] = [
   {
     title: "Al Zahra Consultancy",
     description:
-      "A business management platform for a consultancy company, covering Customer Service Management, Employee Management, Tax, Accounting, and Service Management, alongside the company's public-facing website.",
-    tags: ["HTML", "CSS", "Tailwind", "JavaScript", "PHP", "Laravel", "Livewire", "MySQL"],
+      "Visa Agency CRM & Management Platform — A comprehensive, multilingual (AR/BN/EN) multi-tenant CRM system built for a visa services agency, combining a public marketing website with a full back-office suite. Features include customer and visit tracking, service catalog with packages, invoice generation and PDF export, payment processing, partner & employee commission management, expense tracking, document management, a complete double-entry accounting module (chart of accounts, journal entries, ledger, trial balance), and 10+ financial/operational reports. Includes role-based access control, activity logging, email templates, and a CMS for managing the public site's content.",
+    tags: ["HTML", "CSS", "Tailwind", "Alpine.js", "JavaScript", "PHP", "Laravel", "Livewire", "MySQL"],
     category: "Full-stack",
     associatedWith: "Codeware Limited",
     live: "https://alzahrabd.com/",
@@ -433,8 +433,8 @@ export const projects: Project[] = [
   {
     title: "Bangladesh Medical University (BMU)",
     description:
-      "The official website for Bangladesh Medical University, showcasing research papers, doctor and faculty profiles, student information, thesis papers, and department facilities.",
-    tags: ["HTML", "CSS", "Tailwind", "PHP", "Laravel", "Filament", "Livewire", "MySQL"],
+      "A university administration and research-management platform. Implemented an end-to-end Institutional Review Board (IRB) workflow handling ethics approval lifecycle — multi-stage reviewer assignment, extension/waiver requests, supervisor-change memos, and automated PDF certificate generation with public verification. Engineered governance portals for Academic & Syndicate meetings with agenda publishing, signed email attendance confirmation, and PDF meeting documents. Built a multilingual (English/Bengali) CMS supporting dynamic per-department subdomains, page-builder content, and news/notice publishing.",
+    tags: ["HTML", "CSS", "Tailwind", "Alpine.js", "PHP", "Laravel", "Livewire", "Filament", "MySQL"],
     category: "Full-stack",
     associatedWith: "Codeware Limited",
     live: "https://www.bmu.ac.bd/",
@@ -442,7 +442,7 @@ export const projects: Project[] = [
   {
     title: "Winrooms.com",
     description:
-      "A booking platform for hotels and accommodations, similar in scope to Etripi.com — enabling users to search, compare, and book rooms with room management, dynamic pricing, real-time availability, and partner dashboards.",
+      "A booking platform for hotels and accommodations, — enabling users to search, compare, and book rooms with room management, dynamic pricing, real-time availability, and partner dashboards.",
     tags: [
       "HTML",
       "CSS",
@@ -466,7 +466,7 @@ export const projects: Project[] = [
   {
     title: "Etripi.com",
     description:
-      "A comprehensive online booking platform enabling users to search, compare, and book hotels seamlessly. Includes advanced features for room management, dynamic pricing, real-time availability, partner dashboards, and AI-assisted property descriptions for a smooth experience for both travelers and property owners.",
+      "A comprehensive online hotel and tour booking platform for Bangladesh, enabling travelers to search, compare, and book properties seamlessly while giving hotel partners full control over room management, dynamic pricing, and real-time availability. The platform features a partner portal for managing rate plans and pricing calendars, multi-role access control, a complete booking lifecycle covering checkout, cancellation, date-changes, and no-shows, integrated payment processing with popular local gateways, automated invoice generation, and a dedicated tour booking module — delivering a smooth, end-to-end experience for both travelers and property owners.",
     tags: [
       "HTML",
       "CSS",
