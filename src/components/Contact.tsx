@@ -92,6 +92,19 @@ export default function Contact() {
           </div>
 
           <div>
+            <label htmlFor="phone" className="text-sm font-medium">
+              {t("contact.form_phone")}
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              className="mt-1.5 w-full rounded-xl border border-border-light bg-bg-light px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary dark:border-border dark:bg-bg"
+            />
+          </div>
+
+          <div>
             <label htmlFor="message" className="text-sm font-medium">
               {t("contact.form_message")}
             </label>

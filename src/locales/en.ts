@@ -93,6 +93,7 @@ const en = {
       "Have a project in mind or just want to say hi? My inbox is always open.",
     form_name: "Name",
     form_email: "Email",
+    form_phone: "Phone",
     form_message: "Message",
     send: "Send Message",
     sending: "Sending…",
