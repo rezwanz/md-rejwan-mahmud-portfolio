@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Mail, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { contact, site, socialLinks } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
 import { socialIconMap } from "../lib/social-icons";
 import SectionReveal from "./SectionReveal";
 
@@ -8,6 +9,7 @@ type Status = "idle" | "sending" | "success" | "error";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
+  const { t } = useI18n();
 
   const isConfigured = !contact.formspreeEndpoint.includes("YOUR_FORM_ID");
 
@@ -44,12 +46,14 @@ export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-4xl px-6 py-24 text-center">
       <SectionReveal>
-        <p className="font-mono-accent text-sm text-primary">08. Contact</p>
+        <p className="font-mono-accent text-sm text-primary">
+          {t("contact.section_label")}
+        </p>
         <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
-          {contact.heading}
+          {t("contact.heading")}
         </h2>
         <p className="mx-auto mt-4 max-w-md text-text-light/80 dark:text-text/80">
-          {contact.subheading}
+          {t("contact.subheading")}
         </p>
       </SectionReveal>
 
@@ -61,7 +65,7 @@ export default function Contact() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="text-sm font-medium">
-                Name
+                {t("contact.form_name")}
               </label>
               <input
                 id="name"
@@ -74,7 +78,7 @@ export default function Contact() {
             </div>
             <div>
               <label htmlFor="email" className="text-sm font-medium">
-                Email
+                {t("contact.form_email")}
               </label>
               <input
                 id="email"
@@ -89,7 +93,7 @@ export default function Contact() {
 
           <div>
             <label htmlFor="message" className="text-sm font-medium">
-              Message
+              {t("contact.form_message")}
             </label>
             <textarea
               id="message"
@@ -106,22 +110,22 @@ export default function Contact() {
             className="flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-60"
           >
             <Send size={16} />
-            {status === "sending" ? "Sending…" : "Send Message"}
+            {status === "sending" ? t("contact.sending") : t("contact.send")}
           </button>
 
           <div role="status" aria-live="polite">
             {status === "success" && (
               <p className="flex items-center gap-2 text-sm text-primary">
                 <CheckCircle2 size={16} />
-                Thanks! Your message has been sent — I'll get back to you soon.
+                {t("contact.success")}
               </p>
             )}
             {status === "error" && (
               <p className="flex items-center gap-2 text-sm text-red-500">
                 <AlertCircle size={16} />
                 {isConfigured
-                  ? "Something went wrong. Please email me directly instead."
-                  : "The contact form isn't configured yet. Please email me directly instead."}
+                  ? t("contact.error_generic")
+                  : t("contact.error_not_configured")}
               </p>
             )}
           </div>

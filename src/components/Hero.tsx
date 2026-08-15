@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
-import { site, socialLinks } from "../data/content";
+import { socialLinks } from "../data/content";
 import { useTypewriter } from "../hooks/useTypewriter";
+import { useI18n } from "../hooks/useI18n";
 import { socialIconMap } from "../lib/social-icons";
 // import AuroraArcs from "./AuroraArcs";
 
 export default function Hero() {
-  const role = useTypewriter(site.roles);
+  const { t, tList } = useI18n();
+  const role = useTypewriter(tList("hero.roles"));
 
   return (
     <section
@@ -30,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="font-mono-accent text-sm text-primary"
         >
-          Hi, my name is
+          {t("hero.greeting")}
         </motion.p>
 
         <motion.h1
@@ -39,7 +41,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-3 font-heading text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
         >
-          {site.name}
+          {t("common.name")}
         </motion.h1>
 
         <motion.p
@@ -58,7 +60,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-5 max-w-xl text-base text-text-light/80 sm:text-lg dark:text-text/80"
         >
-          {site.tagline}
+          {t("hero.tagline")}
         </motion.p>
 
         <motion.div
@@ -71,7 +73,7 @@ export default function Hero() {
             href="#projects"
             className="group flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
           >
-            View Projects
+            {t("hero.cta_projects")}
             <ArrowRight
               size={16}
               className="transition-transform group-hover:translate-x-1"
@@ -82,7 +84,7 @@ export default function Hero() {
             className="flex items-center gap-2 rounded-full border border-border-light px-6 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary dark:border-border"
           >
             <Mail size={16} />
-            Contact Me
+            {t("hero.cta_contact")}
           </a>
         </motion.div>
 

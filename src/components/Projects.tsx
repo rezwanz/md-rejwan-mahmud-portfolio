@@ -3,9 +3,19 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { projectFilters, projects, type Project } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
 import SectionReveal from "./SectionReveal";
 
+const FILTER_KEY: Record<(typeof projectFilters)[number], string> = {
+  All: "filter_all",
+  Frontend: "filter_frontend",
+  "Full-stack": "filter_fullstack",
+  Backend: "filter_backend",
+};
+
 function ProjectCard({ project }: { project: Project }) {
+  const { t } = useI18n();
+
   return (
     <motion.div
       layout
@@ -25,7 +35,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              aria-label={`${project.title} GitHub repository`}
+              aria-label={`${project.title} ${t("projects.github_aria")}`}
               className="transition-colors hover:text-primary"
             >
               <FaGithub size={18} />
@@ -36,7 +46,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              aria-label={`${project.title} live demo`}
+              aria-label={`${project.title} ${t("projects.live_aria")}`}
               className="transition-colors hover:text-primary"
             >
               <ExternalLink size={18} />
@@ -72,6 +82,7 @@ function ProjectCard({ project }: { project: Project }) {
 export default function Projects() {
   const [filter, setFilter] =
     useState<(typeof projectFilters)[number]>("All");
+  const { t } = useI18n();
 
   const filtered = useMemo(
     () =>
@@ -84,15 +95,17 @@ export default function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
       <SectionReveal>
-        <p className="font-mono-accent text-sm text-primary">05. Projects</p>
+        <p className="font-mono-accent text-sm text-primary">
+          {t("projects.section_label")}
+        </p>
         <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
-          Things I've Built
+          {t("projects.heading")}
         </h2>
       </SectionReveal>
 
       <SectionReveal delay={0.1}>
         <div
-          aria-label="Filter projects by category"
+          aria-label={t("projects.filter_aria")}
           className="mt-8 flex flex-wrap gap-2"
         >
           {projectFilters.map((tag) => (
@@ -107,7 +120,7 @@ export default function Projects() {
                   : "border border-border-light text-muted hover:border-primary hover:text-primary dark:border-border"
               }`}
             >
-              {tag}
+              {t(`projects.${FILTER_KEY[tag]}`)}
             </button>
           ))}
         </div>

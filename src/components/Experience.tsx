@@ -1,13 +1,18 @@
 import { experience } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
 import SectionReveal from "./SectionReveal";
 
 export default function Experience() {
+  const { t } = useI18n();
+
   return (
     <section id="experience" className="mx-auto max-w-6xl px-6 py-24">
       <SectionReveal>
-        <p className="font-mono-accent text-sm text-primary">03. Experience</p>
+        <p className="font-mono-accent text-sm text-primary">
+          {t("experience.section_label")}
+        </p>
         <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
-          Where I've Worked
+          {t("experience.heading")}
         </h2>
       </SectionReveal>
 

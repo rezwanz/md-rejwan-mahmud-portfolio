@@ -1,16 +1,19 @@
 import { Award, ExternalLink } from "lucide-react";
 import { certifications } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
 import SectionReveal from "./SectionReveal";
 
 export default function Certifications() {
+  const { t } = useI18n();
+
   return (
     <section id="certifications" className="mx-auto max-w-6xl px-6 py-24">
       <SectionReveal>
         <p className="font-mono-accent text-sm text-primary">
-          06. Licenses & Certifications
+          {t("certifications.section_label")}
         </p>
         <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
-          Certifications
+          {t("certifications.heading")}
         </h2>
       </SectionReveal>
 
@@ -33,7 +36,9 @@ export default function Certifications() {
                       href={item.credentialUrl}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`Show credential for ${item.title}`}
+                      aria-label={t("certifications.show_credential_aria", {
+                        title: item.title,
+                      })}
                       className="shrink-0 text-muted transition-colors hover:text-primary"
                     >
                       <ExternalLink size={16} />
@@ -42,11 +47,13 @@ export default function Certifications() {
                 </div>
                 <p className="mt-1 text-sm text-muted">{item.issuer}</p>
                 <p className="font-mono-accent mt-1 text-xs text-muted">
-                  Issued {item.issued}
+                  {t("certifications.issued_label", { date: item.issued })}
                 </p>
                 {item.credentialId && (
                   <p className="mt-2 text-xs text-text-light/80 dark:text-text/80">
-                    Credential ID: {item.credentialId}
+                    {t("certifications.credential_id", {
+                      id: item.credentialId,
+                    })}
                   </p>
                 )}
                 {item.skills && item.skills.length > 0 && (

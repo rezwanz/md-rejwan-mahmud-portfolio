@@ -1,13 +1,18 @@
 import { about } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
 import SectionReveal from "./SectionReveal";
 
 export default function About() {
+  const { t } = useI18n();
+
   return (
     <section id="about" className="mx-auto max-w-6xl px-6 py-24">
       <SectionReveal>
-        <p className="font-mono-accent text-sm text-primary">01. About</p>
+        <p className="font-mono-accent text-sm text-primary">
+          {t("about.section_label")}
+        </p>
         <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
-          {about.heading}
+          {t("about.heading")}
         </h2>
       </SectionReveal>
 

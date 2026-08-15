@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun, Download } from "lucide-react";
-import { nav, site } from "../data/content";
+import { site } from "../data/content";
 import { useTheme } from "../hooks/useTheme";
+import { useI18n } from "../hooks/useI18n";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { NAV_IDS, useNavItems } from "../lib/nav";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const activeId = useActiveSection(nav.map((item) => item.href.slice(1)));
+  const { t } = useI18n();
+  const navItems = useNavItems();
+  const activeId = useActiveSection(NAV_IDS);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -37,7 +42,7 @@ export default function Navbar() {
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {nav.map((item) => (
+          {navItems.map((item) => (
             <li key={item.href}>
               <a
                 href={item.href}
@@ -60,25 +65,30 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            aria-label={
+              theme === "dark"
+                ? t("nav.switch_to_light_aria")
+                : t("nav.switch_to_dark_aria")
+            }
             className="rounded-full p-2 text-text-light/70 transition-colors hover:bg-black/5 hover:text-primary dark:text-text/70 dark:hover:bg-white/10"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+          <LanguageSwitcher />
           <a
             href={site.resumeUrl}
             download
             className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
           >
             <Download size={16} />
-            Resume
+            {t("nav.resume")}
           </a>
         </div>
 
         <button
           type="button"
           className="p-2 md:hidden"
-          aria-label="Toggle menu"
+          aria-label={t("nav.toggle_menu")}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -96,7 +106,7 @@ export default function Navbar() {
             className="overflow-hidden border-b border-border-light bg-bg-light/95 backdrop-blur-lg md:hidden dark:border-border dark:bg-bg/95"
           >
             <ul className="flex flex-col gap-1 px-6 py-4">
-              {nav.map((item) => (
+              {navItems.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
@@ -111,20 +121,27 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={toggleTheme}
-                  aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                  aria-label={
+                    theme === "dark"
+                      ? t("nav.switch_to_light_aria")
+                      : t("nav.switch_to_dark_aria")
+                  }
                   className="flex items-center gap-2 text-sm font-medium text-text-light/80 dark:text-text/80"
                 >
                   {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-                  {theme === "dark" ? "Light mode" : "Dark mode"}
+                  {theme === "dark" ? t("nav.light_mode") : t("nav.dark_mode")}
                 </button>
-                <a
-                  href={site.resumeUrl}
-                  download
-                  className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white"
-                >
-                  <Download size={16} />
-                  Resume
-                </a>
+                <div className="flex items-center gap-3">
+                  <LanguageSwitcher />
+                  <a
+                    href={site.resumeUrl}
+                    download
+                    className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white"
+                  >
+                    <Download size={16} />
+                    {t("nav.resume")}
+                  </a>
+                </div>
               </li>
             </ul>
           </motion.div>

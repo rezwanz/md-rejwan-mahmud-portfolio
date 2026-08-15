@@ -1,7 +1,11 @@
 import { ArrowUp } from "lucide-react";
-import { nav, site } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
+import { useNavItems } from "../lib/nav";
 
 export default function Footer() {
+  const { t } = useI18n();
+  const navItems = useNavItems();
+
   return (
     <footer className="relative overflow-hidden border-t border-border-light px-6 py-10 dark:border-border">
       <div
@@ -24,11 +28,14 @@ export default function Footer() {
 
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
         <p className="text-sm text-muted">
-          &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+          {t("footer.copyright", {
+            year: String(new Date().getFullYear()),
+            name: t("common.name"),
+          })}
         </p>
 
         <ul className="flex flex-wrap items-center justify-center gap-6">
-          {nav.map((item) => (
+          {navItems.map((item) => (
             <li key={item.href}>
               <a
                 href={item.href}
@@ -42,11 +49,11 @@ export default function Footer() {
 
         <a
           href="#top"
-          aria-label="Back to top"
+          aria-label={t("footer.back_to_top")}
           className="flex items-center gap-1.5 rounded-full border border-border-light px-3 py-1.5 text-sm text-muted transition-colors hover:border-primary hover:text-primary dark:border-border"
         >
           <ArrowUp size={14} />
-          Top
+          {t("footer.top")}
         </a>
       </div>
     </footer>

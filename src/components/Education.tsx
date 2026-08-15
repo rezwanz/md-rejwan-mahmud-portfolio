@@ -1,8 +1,11 @@
 import { GraduationCap } from "lucide-react";
 import { education } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
 import SectionReveal from "./SectionReveal";
 
 export default function Education() {
+  const { t } = useI18n();
+
   return (
     <section
       id="education"
@@ -11,10 +14,10 @@ export default function Education() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionReveal>
           <p className="font-mono-accent text-sm text-primary">
-            04. Education
+            {t("education.section_label")}
           </p>
           <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
-            Academic Background
+            {t("education.heading")}
           </h2>
         </SectionReveal>
 

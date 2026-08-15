@@ -1,5 +1,6 @@
 import { Code2, Server, Database, Layers, Smartphone } from "lucide-react";
 import { services, type ServiceItem } from "../data/content";
+import { useI18n } from "../hooks/useI18n";
 import SectionReveal from "./SectionReveal";
 
 const serviceIconMap: Record<ServiceItem["icon"], typeof Code2> = {
@@ -11,6 +12,8 @@ const serviceIconMap: Record<ServiceItem["icon"], typeof Code2> = {
 };
 
 export default function Services() {
+  const { t } = useI18n();
+
   return (
     <section
       id="services"
@@ -18,9 +21,11 @@ export default function Services() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <SectionReveal>
-          <p className="font-mono-accent text-sm text-primary">07. Services</p>
+          <p className="font-mono-accent text-sm text-primary">
+            {t("services.section_label")}
+          </p>
           <h2 className="mt-2 font-heading text-3xl font-bold sm:text-4xl">
-            What I Can Help With
+            {t("services.heading")}
           </h2>
         </SectionReveal>
 

@@ -8,9 +8,11 @@ import {
   Moon,
   Download,
 } from "lucide-react";
-import { nav, site, socialLinks } from "../data/content";
+import { site, socialLinks } from "../data/content";
 import { socialIconMap } from "../lib/social-icons";
 import { useTheme } from "../hooks/useTheme";
+import { useI18n } from "../hooks/useI18n";
+import { useNavItems } from "../lib/nav";
 
 interface Action {
   id: string;
@@ -26,6 +28,8 @@ export default function CommandPalette() {
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const { theme, toggleTheme } = useTheme();
+  const { t } = useI18n();
+  const navItems = useNavItems();
 
   const close = () => {
     setOpen(false);
@@ -34,10 +38,10 @@ export default function CommandPalette() {
   };
 
   const actions = useMemo<Action[]>(() => {
-    const sectionActions: Action[] = nav.map((item) => ({
+    const sectionActions: Action[] = navItems.map((item) => ({
       id: `nav-${item.href}`,
-      label: `Go to ${item.label}`,
-      hint: "Section",
+      label: t("commands.go_to", { section: item.label }),
+      hint: t("commands.hint_section"),
       icon: ArrowRight,
       perform: () => {
         document
@@ -50,8 +54,8 @@ export default function CommandPalette() {
       .filter((link) => link.icon !== "mail")
       .map((link) => ({
         id: `social-${link.label}`,
-        label: `Open ${link.label}`,
-        hint: "Link",
+        label: t("commands.open", { label: link.label }),
+        hint: t("commands.hint_link"),
         icon: socialIconMap[link.icon],
         perform: () => window.open(link.href, "_blank", "noreferrer"),
       }));
@@ -59,15 +63,15 @@ export default function CommandPalette() {
     return [
       {
         id: "theme",
-        label: theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
-        hint: "Theme",
+        label: theme === "dark" ? t("commands.theme_light") : t("commands.theme_dark"),
+        hint: t("commands.hint_theme"),
         icon: theme === "dark" ? Sun : Moon,
         perform: toggleTheme,
       },
       {
         id: "resume",
-        label: "Download resume",
-        hint: "PDF",
+        label: t("commands.download_resume"),
+        hint: t("commands.hint_pdf"),
         icon: Download,
         perform: () => {
           const link = document.createElement("a");
@@ -79,7 +83,7 @@ export default function CommandPalette() {
       ...sectionActions,
       ...socialActions,
     ];
-  }, [theme, toggleTheme]);
+  }, [theme, toggleTheme, t, navItems]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -132,7 +136,7 @@ export default function CommandPalette() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label="Open command palette"
+        aria-label={t("commands.open_aria")}
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-border-light bg-bg-light/90 px-4 py-3 text-sm font-medium text-muted shadow-lg backdrop-blur-lg transition-colors hover:border-primary hover:text-primary dark:border-border dark:bg-bg/90 sm:px-3 sm:py-2"
       >
         <Command size={16} />
@@ -153,7 +157,7 @@ export default function CommandPalette() {
             <motion.div
               role="dialog"
               aria-modal="true"
-              aria-label="Command palette"
+              aria-label={t("commands.dialog_aria")}
               initial={{ opacity: 0, y: -12, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -12, scale: 0.98 }}
@@ -168,7 +172,7 @@ export default function CommandPalette() {
                   type="text"
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Jump to a section or run a command…"
+                  placeholder={t("commands.placeholder")}
                   className="w-full bg-transparent text-sm outline-none placeholder:text-muted"
                 />
                 <kbd className="font-mono-accent shrink-0 rounded-md border border-border-light px-1.5 py-0.5 text-xs text-muted dark:border-border">
@@ -179,7 +183,7 @@ export default function CommandPalette() {
               <ul className="max-h-80 overflow-y-auto py-2">
                 {filtered.length === 0 && (
                   <li className="px-4 py-6 text-center text-sm text-muted">
-                    No matching commands.
+                    {t("commands.no_results")}
                   </li>
                 )}
                 {filtered.map((action, i) => {
