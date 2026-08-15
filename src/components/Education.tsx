@@ -37,7 +37,17 @@ export default function Education() {
                     {item.degree}
                   </h3>
                   <p className="mt-1 text-sm text-muted">
-                    {item.institution}
+                    {item.institutionUrl ? (
+                      <a href={item.institutionUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline-offset-4 hover:underline"
+                      >
+                        {item.institution}
+                      </a>
+                    ) : (
+                      item.institution
+                    )}
                   </p>
                   <p className="font-mono-accent mt-1 text-xs text-muted">
                     {item.start} — {item.end}

@@ -39,6 +39,7 @@ export interface ExperienceItem {
 export interface EducationItem {
   degree: string;
   institution: string;
+  institutionUrl?: string;
   start: string;
   end: string;
   details?: string;
@@ -346,6 +347,7 @@ export const education: EducationItem[] = [
   {
     degree: "Executive Master in Information Technology",
     institution: "University of Dhaka",
+    institutionUrl: "https://iit.du.ac.bd/home",
     start: "2023",
     end: "2025",
     details: "Specialized in Software Engineering and Data Science.",
@@ -353,6 +355,7 @@ export const education: EducationItem[] = [
   {
     degree: "B.Sc in Computer Science and Engineering",
     institution: "Independent University, Bangladesh (IUB)",
+    institutionUrl: "https://iub.ac.bd/",
     start: "2017",
     end: "2022",
     details:
