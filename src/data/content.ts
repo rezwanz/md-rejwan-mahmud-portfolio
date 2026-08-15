@@ -288,8 +288,9 @@ export const experience: ExperienceItem[] = [
     start: "May 2025",
     end: "Present",
     bullets: [
-      "Developed and implemented new backend features, fixed critical bugs, and optimized database structures and queries.",
-      "Provided emergency technical support and collaborated across teams.",
+      "Developed backend and frontend features, resolved critical bugs, and optimized database structures and queries for scalability.",
+      "Provided emergency technical support and attended client meetings.",
+      "Collaborated closely with frontend and backend teams to ensure seamless integration and high-quality releases.",
     ],
   },
   {
@@ -298,8 +299,9 @@ export const experience: ExperienceItem[] = [
     start: "Apr 2024",
     end: "Apr 2025",
     bullets: [
-      "Developed backend and frontend features, fixed critical bugs, and created reports.",
-      "Refactored ERP modules for improved performance and efficiency.",
+      "Developed backend and frontend features, resolved critical bugs, and generated detailed reports to enhance module stability.",
+      "Refactored and optimized ERP modules, and improved database structures and queries for scalability.",
+      "Provided emergency technical support and collaborated across teams to deliver high-quality releases.",
     ],
   },
   {
@@ -308,8 +310,9 @@ export const experience: ExperienceItem[] = [
     start: "Feb 2023",
     end: "Mar 2024",
     bullets: [
-      "Developed web applications with a focus on backend and frontend.",
-      "Designed scalable system architectures based on project goals and client needs.",
+      "Developed web applications with a focus on backend and frontend development.",
+      "Designed scalable system architectures and optimized databases with efficient schemas and ERD diagrams.",
+      "Collaborated with cross-functional teams and maintained Git workflows.",
     ],
   },
   {
@@ -327,8 +330,8 @@ export const experience: ExperienceItem[] = [
     start: "Jan 2022",
     end: "Apr 2022",
     bullets: [
-      "Worked closely with senior developers to build scalable web applications and front-end designs.",
-      "Conducted software testing and debugging.",
+      "Worked closely with senior developers to build scalable web applications and responsive, compatible front-end designs.",
+      "Conducted software testing and debugging to ensure quality.",
     ],
   },
 ];
