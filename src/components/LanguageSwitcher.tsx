@@ -13,7 +13,7 @@ export default function LanguageSwitcher() {
     languages.find((lang) => lang.code === currentLang) ?? languages[0];
 
   useEffect(() => {
-    function onPointerDown(event: MouseEvent) {
+    function onPointerDown(event: PointerEvent) {
       if (
         containerRef.current &&
         !containerRef.current.contains(event.target as Node)
@@ -21,8 +21,8 @@ export default function LanguageSwitcher() {
         setOpen(false);
       }
     }
-    document.addEventListener("mousedown", onPointerDown);
-    return () => document.removeEventListener("mousedown", onPointerDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
   }, []);
 
   return (
@@ -52,7 +52,7 @@ export default function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.97 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-border-light bg-bg-light py-1 shadow-xl dark:border-border dark:bg-bg"
+            className="absolute right-0 bottom-full mb-2 w-44 overflow-hidden rounded-xl border border-border-light bg-bg-light py-1 shadow-xl dark:border-border dark:bg-bg md:bottom-auto md:top-full md:mb-0 md:mt-2"
           >
             {languages.map((lang) => (
               <li
