@@ -440,7 +440,7 @@ export const projects: Project[] = [
     live: "https://www.bmu.ac.bd/",
   },
   {
-    title: "Winrooms.com",
+    title: "Winrooms",
     description:
       "A hotel & accommodation booking platform for searching, comparing, and booking rooms, with dynamic pricing, real-time availability, and partner dashboards for property management.",
     tags: [
@@ -464,7 +464,7 @@ export const projects: Project[] = [
     live: "https://winrooms.com/",
   },
   {
-    title: "Etripi.com",
+    title: "Etripi",
     description:
       "A hotel & tour booking platform for the Bangladesh market, with a partner portal for rate/availability management, local payment gateway integration, automated invoicing, and a dedicated tour booking module.",
     tags: [
