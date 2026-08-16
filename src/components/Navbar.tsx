@@ -23,6 +23,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    event.preventDefault();
+    setMenuOpen(false);
+    const target = document.getElementById(href.slice(1));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
@@ -32,10 +45,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a
-          href="#top"
-          className="font-heading text-lg font-semibold tracking-tight"
-        >
+        <a href="#top" className="font-heading text-lg font-semibold tracking-tight">
           <span className="text-primary">&lt;</span>
           {site.initials}
           <span className="text-primary">/&gt;</span>
@@ -44,8 +54,8 @@ export default function Navbar() {
         <ul className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a
-                href={item.href}
+              <a href={item.href}
+                onClick={(event) => handleNavClick(event, item.href)}
                 aria-current={
                   activeId === item.href.slice(1) ? "location" : undefined
                 }
@@ -61,9 +71,8 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <button
-            type="button"
+        <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
+          <button type="button"
             onClick={toggleTheme}
             aria-label={
               theme === "dark"
@@ -75,25 +84,23 @@ export default function Navbar() {
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <LanguageSwitcher />
-          <a
-            href={site.resumeUrl}
+          <a href={site.resumeUrl}
             download
-            className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+            className="flex items-center gap-2 rounded-full bg-primary p-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark sm:px-4 sm:py-2"
           >
             <Download size={16} />
-            {t("nav.resume")}
+            <span className="hidden sm:inline">{t("nav.resume")}</span>
           </a>
-        </div>
 
-        <button
-          type="button"
-          className="p-2 md:hidden"
-          aria-label={t("nav.toggle_menu")}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          <button type="button"
+            className="rounded-full p-2 text-text-light/70 transition-colors hover:bg-black/5 hover:text-primary md:hidden dark:text-text/70 dark:hover:bg-white/10"
+            aria-label={t("nav.toggle_menu")}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -108,41 +115,21 @@ export default function Navbar() {
             <ul className="flex flex-col gap-1 px-6 py-4">
               {navItems.map((item) => (
                 <li key={item.href}>
-                  <a
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block rounded-lg px-3 py-2 text-sm font-medium text-text-light/80 hover:bg-black/5 hover:text-primary dark:text-text/80 dark:hover:bg-white/10"
+                  <a href={item.href}
+                    onClick={(event) => handleNavClick(event, item.href)}
+                    aria-current={
+                      activeId === item.href.slice(1) ? "location" : undefined
+                    }
+                    className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-black/5 hover:text-primary dark:hover:bg-white/10 ${
+                      activeId === item.href.slice(1)
+                        ? "text-primary"
+                        : "text-text-light/80 dark:text-text/80"
+                    }`}
                   >
                     {item.label}
                   </a>
                 </li>
               ))}
-              <li className="mt-2 flex items-center justify-between px-3">
-                <button
-                  type="button"
-                  onClick={toggleTheme}
-                  aria-label={
-                    theme === "dark"
-                      ? t("nav.switch_to_light_aria")
-                      : t("nav.switch_to_dark_aria")
-                  }
-                  className="flex items-center gap-2 text-sm font-medium text-text-light/80 dark:text-text/80"
-                >
-                  {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-                  {theme === "dark" ? t("nav.light_mode") : t("nav.dark_mode")}
-                </button>
-                <div className="flex items-center gap-3">
-                  <LanguageSwitcher />
-                  <a
-                    href={site.resumeUrl}
-                    download
-                    className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white"
-                  >
-                    <Download size={16} />
-                    {t("nav.resume")}
-                  </a>
-                </div>
-              </li>
             </ul>
           </motion.div>
         )}
