@@ -23,16 +23,25 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    event.preventDefault();
-    setMenuOpen(false);
-    const target = document.getElementById(href.slice(1));
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const hash = event.currentTarget.hash;
+    const target = document.getElementById(hash.slice(1));
     if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.pushState(null, "", href);
+      event.preventDefault();
+      setMenuOpen(false);
+      window.setTimeout(() => {
+        window.scrollTo({
+          top:
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            Number.parseInt(
+              getComputedStyle(document.documentElement).scrollPaddingTop,
+              10,
+            ),
+          behavior: "smooth",
+        });
+        window.history.pushState(null, "", hash);
+      }, 320);
     }
   };
 
@@ -55,7 +64,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <li key={item.href}>
               <a href={item.href}
-                onClick={(event) => handleNavClick(event, item.href)}
+                onClick={handleNavClick}
                 aria-current={
                   activeId === item.href.slice(1) ? "location" : undefined
                 }
@@ -116,7 +125,7 @@ export default function Navbar() {
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a href={item.href}
-                    onClick={(event) => handleNavClick(event, item.href)}
+                    onClick={handleNavClick}
                     aria-current={
                       activeId === item.href.slice(1) ? "location" : undefined
                     }
