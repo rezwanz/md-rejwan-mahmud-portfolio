@@ -13,9 +13,12 @@ A single-page portfolio built with React, Vite, TypeScript, Tailwind CSS, and Fr
 
 ```bash
 npm install
-npm run dev      # start dev server
-npm run build    # type-check + production build to dist/
-npm run preview  # preview the production build locally
+npm run dev        # start dev server
+npm run build      # type-check + production build to dist/
+npm run preview    # preview the production build locally
+npm run test       # run the Vitest smoke-test suite
+npm run lint       # oxlint
+npm run check:i18n # verify en/bn locale keys are in sync
 ```
 
 ## Editing content

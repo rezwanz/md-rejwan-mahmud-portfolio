@@ -175,7 +175,11 @@ The site shipped with several features that were never in the original spec abov
 
 ### Known gaps / unfinished threads worth tracking
 
-- `src/components/AuroraArcs.tsx` is a fully-built decorative SVG component that is imported-but-commented-out in `Hero.tsx` (`// import AuroraArcs...` / `{/*<AuroraArcs />*/}`). Dead code — either wire it back in or delete it.
-- `src/assets/images/projects/*` (6 screenshots: etripi, goRMG, project-4, qkaf, wyss_lims, wyss_web) and `src/assets/images/company/*` (6 company/institution logos) were added in a single commit ("Resume and image added") but are never referenced from `src/data/content.ts` or rendered by any component. `Project.image` is defined in the content schema but never populated.
-- Two `certifications` entries in `content.ts` set `certificateImage` pointing at `/assets/images/certificates/*.jpg`, but those files don't exist (`public/assets/images/certificates/` only has a `.gitkeep`), and `Certifications.tsx` doesn't render `certificateImage` at all even where it's set — the field is currently inert on both ends.
-- `tsconfig.app.json` doesn't set `"strict": true` (only `noUnusedLocals`/`noUnusedParameters`/etc. are on) — looser type-checking than the rest of the codebase's engineering quality would suggest.
+- `src/components/AuroraArcs.tsx` is a fully-built decorative SVG component that is imported-but-commented-out in `Hero.tsx` (`// import AuroraArcs...` / `{/*<AuroraArcs />*/}`). Left as-is intentionally for now — revisit later.
+- `src/assets/images/projects/*` (6 screenshots: etripi, goRMG, project-4, qkaf, wyss_lims, wyss_web) and `src/assets/images/company/*` (6 company/institution logos) were added in a single commit ("Resume and image added") but are still never referenced from `src/data/content.ts` or rendered by any component. `Project.image` is defined in the content schema but never populated. Decision made 2026-08-17: worth wiring up (screenshots + logos read as more modern/credible than text-only cards when framed consistently — fixed aspect-ratio thumbnails, `object-cover`, matching rounded corners) — pending more project images before doing the wiring pass.
+
+### Fixed 2026-08-17
+
+- Enabled `"strict": true` in both `tsconfig.app.json` and `tsconfig.node.json` — the codebase was already strict-clean, so this was a zero-fix, pure safety-net win.
+- Added `og:locale` (`en_US`) and `og:locale:alternate` (`bn_BD`) meta tags to `index.html` now that the site is genuinely bilingual.
+- Added a Vitest smoke-test suite (`npm run test`): `ThemeProvider`, `LanguageProvider`, and a full-`App` render-without-crashing test, covering the interactive logic (theme persistence, locale switching + `<html lang/dir>` sync, missing-translation fallback) that previously had zero coverage.
