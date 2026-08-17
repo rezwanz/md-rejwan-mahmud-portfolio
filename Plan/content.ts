@@ -292,6 +292,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Codeware Limited",
+    companyUrl: "https://www.codewareltd.com/",
     start: "May 2025",
     end: "Present",
     bullets: [
@@ -303,6 +304,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Skylark Soft Limited",
+    companyUrl: "https://www.skylarksoft.com/",
     start: "Apr 2024",
     end: "Apr 2025",
     bullets: [
@@ -314,6 +316,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Jr. Software Engineer",
     company: "DevTechGuru",
+    companyUrl: "https://devtechguru.com/",
     start: "Feb 2023",
     end: "Mar 2024",
     bullets: [
@@ -325,6 +328,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Trainee Software Engineer",
     company: "DevTechGuru",
+    companyUrl: "https://devtechguru.com/",
     start: "Aug 2022",
     end: "Jan 2023",
     bullets: [
@@ -334,6 +338,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Development Engineer (Intern)",
     company: "Excellent Soft Ltd.",
+    companyUrl: "https://excellent-soft.net/",
     start: "Jan 2022",
     end: "Apr 2022",
     bullets: [
