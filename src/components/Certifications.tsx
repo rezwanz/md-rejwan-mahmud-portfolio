@@ -24,7 +24,7 @@ export default function Certifications() {
             delay={i * 0.1}
             className="h-full"
           >
-            <div className="flex h-full gap-4 rounded-2xl border border-border-light bg-surface-light p-6 dark:border-border dark:bg-surface">
+            <div className="flex h-full gap-4 rounded-2xl border border-border-light bg-surface-light p-6 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 dark:border-border dark:bg-surface">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Award size={20} />
               </span>
