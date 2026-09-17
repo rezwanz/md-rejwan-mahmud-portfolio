@@ -34,7 +34,7 @@ export default function Services() {
             const Icon = serviceIconMap[service.icon];
             return (
               <SectionReveal key={service.title} delay={i * 0.08}>
-                <div className="flex h-full flex-col gap-4 rounded-2xl border border-border-light bg-bg-light p-6 transition-colors hover:border-primary/50 dark:border-border dark:bg-bg">
+                <div className="flex h-full flex-col gap-4 rounded-2xl border border-border-light bg-bg-light p-6 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 dark:border-border dark:bg-bg">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <Icon size={20} />
                   </span>

@@ -157,3 +157,29 @@ placeholders.
 ---
 
 *Palette note: teal was chosen over light-green/light-purple because it best matches "clean, minimal, professional" for a developer portfolio while still standing out from the extremely common blue theme — but section 2.1's CSS variables are structured so swapping to green or purple is a one-line change if you change your mind later.*
+
+---
+
+## 8. Built Beyond the Original Plan (post-launch additions)
+
+The site shipped with several features that were never in the original spec above. Documented here so this plan stays a true reflection of the site, and so future work builds on top of these rather than rediscovering them.
+
+- **Multilingual i18n (EN/BN)** — `src/context/LanguageContext.tsx` + `src/hooks/useI18n.ts` + `src/locales/{en,bn}.ts`. Dot-path key lookup with `{var}` interpolation, missing-key dev warnings, locale persisted in `localStorage`. A dedicated `npm run check:i18n` script (`scripts/check-locales.mjs`) fails CI/local runs if the `en`/`bn` key trees drift, and `bn.ts` is typed as `Locale` so `tsc` also catches drift at compile time. `src/utils/rtl.ts` already scaffolds RTL direction switching (`dir` attribute) so a future Arabic locale is a data-only addition, not a refactor. `LanguageSwitcher.tsx` renders a flag-based dropdown in the navbar (flags in `public/images/flags/`).
+- **Command palette (⌘K / Ctrl+K)** — `src/components/CommandPalette.tsx`. Fuzzy-filterable action list: jump to any section, toggle theme, download resume, open social links. Full keyboard nav (arrows, Enter, Esc) and a floating trigger button.
+- **Scroll progress bar** — `src/components/ScrollProgress.tsx`, a thin fixed progress indicator driven by Framer Motion's `useScroll`/`useSpring`.
+- **Mobile hamburger navigation** — collapsible menu in `Navbar.tsx` with animated height/opacity via Framer Motion (`AnimatePresence`).
+- **Accessibility extras beyond the plan's baseline** — skip-to-content link (`App.tsx`), `aria-current="location"` on the active nav link (desktop + mobile), `role="status" aria-live="polite"` on the contact form's submit feedback, `aria-haspopup`/`aria-expanded`/`role="listbox"` on the language switcher.
+- **SEO beyond the plan's baseline** — JSON-LD `Person` structured data in `index.html`, `sitemap.xml`, `robots.txt`, canonical URL, full Open Graph + Twitter Card tags, inline anti-FOUC theme script (sets the `dark` class before first paint, before React hydrates).
+- **Deployment: Cloudflare Pages is now the primary target**, not GitHub Pages. `README.md` documents Cloudflare Pages (connect-to-Git, auto-detected Vite build) as the main path; the GitHub Actions workflow (`.github/workflows/deploy.yml`) + `public/CNAME` remain as a documented alternative. Section 7's cheat-sheet still applies if GitHub Pages is used instead.
+- **Hover treatment made consistent across all card sections (2026-08-17)** — Projects cards originally had lift + border-glow + shadow on hover; Services only had a border highlight; Education and Certifications had no hover state at all. All four now share the same `hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10` treatment.
+
+### Known gaps / unfinished threads worth tracking
+
+- `src/components/AuroraArcs.tsx` is a fully-built decorative SVG component that is imported-but-commented-out in `Hero.tsx` (`// import AuroraArcs...` / `{/*<AuroraArcs />*/}`). Left as-is intentionally for now — revisit later.
+- `src/assets/images/projects/*` (6 screenshots: etripi, goRMG, project-4, qkaf, wyss_lims, wyss_web) and `src/assets/images/company/*` (6 company/institution logos) were added in a single commit ("Resume and image added") but are still never referenced from `src/data/content.ts` or rendered by any component. `Project.image` is defined in the content schema but never populated. Decision made 2026-08-17: worth wiring up (screenshots + logos read as more modern/credible than text-only cards when framed consistently — fixed aspect-ratio thumbnails, `object-cover`, matching rounded corners) — pending more project images before doing the wiring pass.
+
+### Fixed 2026-08-17
+
+- Enabled `"strict": true` in both `tsconfig.app.json` and `tsconfig.node.json` — the codebase was already strict-clean, so this was a zero-fix, pure safety-net win.
+- Added `og:locale` (`en_US`) and `og:locale:alternate` (`bn_BD`) meta tags to `index.html` now that the site is genuinely bilingual.
+- Added a Vitest smoke-test suite (`npm run test`): `ThemeProvider`, `LanguageProvider`, and a full-`App` render-without-crashing test, covering the interactive logic (theme persistence, locale switching + `<html lang/dir>` sync, missing-translation fallback) that previously had zero coverage.

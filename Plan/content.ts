@@ -292,6 +292,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Codeware Limited",
+    companyUrl: "https://www.codewareltd.com/",
     start: "May 2025",
     end: "Present",
     bullets: [
@@ -303,6 +304,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Skylark Soft Limited",
+    companyUrl: "https://www.skylarksoft.com/",
     start: "Apr 2024",
     end: "Apr 2025",
     bullets: [
@@ -314,6 +316,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Jr. Software Engineer",
     company: "DevTechGuru",
+    companyUrl: "https://devtechguru.com/",
     start: "Feb 2023",
     end: "Mar 2024",
     bullets: [
@@ -325,6 +328,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Trainee Software Engineer",
     company: "DevTechGuru",
+    companyUrl: "https://devtechguru.com/",
     start: "Aug 2022",
     end: "Jan 2023",
     bullets: [
@@ -334,6 +338,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Development Engineer (Intern)",
     company: "Excellent Soft Ltd.",
+    companyUrl: "https://excellent-soft.net/",
     start: "Jan 2022",
     end: "Apr 2022",
     bullets: [
@@ -452,7 +457,7 @@ export const projects: Project[] = [
     live: "https://www.bmu.ac.bd/",
   },
   {
-    title: "Winrooms.com",
+    title: "Winrooms",
     description:
       "A hotel & accommodation booking platform for searching, comparing, and booking rooms, with dynamic pricing, real-time availability, and partner dashboards for property management.",
     tags: [
@@ -477,7 +482,7 @@ export const projects: Project[] = [
     live: "https://winrooms.com/",
   },
   {
-    title: "Etripi.com",
+    title: "Etripi",
     description:
       "A hotel & tour booking platform for the Bangladesh market, with a partner portal for rate/availability management, local payment gateway integration, automated invoicing, and a dedicated tour booking module.",
     tags: [
