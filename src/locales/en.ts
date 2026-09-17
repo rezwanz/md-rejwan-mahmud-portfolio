@@ -26,9 +26,9 @@ const en = {
   // ── Hero ──────────────────────────────────────────────────────────────────
   hero: {
     greeting: "Hi, my name is",
-    roles: ["Software Engineer", "Full-Stack Developer", "Problem Solver"],
+    roles: ["Software Engineer", "Backend Engineer", "Full-Stack Developer"],
     tagline:
-      "I build scalable, high-quality web & mobile applications across the full stack.",
+      "I build scalable SaaS, ERP, CRM, and business applications with a focus on backend architecture, database performance, and reliable delivery.",
     cta_projects: "View Projects",
     cta_contact: "Contact Me",
   },
@@ -90,7 +90,7 @@ const en = {
     section_label: "08. Contact",
     heading: "Get In Touch",
     subheading:
-      "Have a project in mind or just want to say hi? My inbox is always open.",
+      "Have a project in mind or want to discuss a software engineering opportunity? My inbox is open.",
     form_name: "Name",
     form_email: "Email",
     form_phone: "Phone",
