@@ -77,10 +77,10 @@ export const site = {
   name: "Md. Rejwan Mahmud",
   initials: "rejwan.dev",
   role: "Software Engineer",
-  roles: ["Software Engineer", "Full-Stack Developer", "Problem Solver"],
+  roles: ["Software Engineer", "Backend Engineer", "Full-Stack Developer"],
   tagline:
-    "I build scalable, high-quality web & mobile applications across the full stack.",
-  location: "Dhaka, Bangladesh",
+    "I build scalable SaaS, ERP, CRM, and business applications with a focus on backend architecture, database performance, and reliable delivery.",
+  location: "Narayanganj, Bangladesh",
   email: "rejwan.dev24@gmail.com",
   resumeUrl: "/assets/files/resume-md-rejwan-mahmud.pdf",
   githubUsername: "rezwanz",
@@ -110,12 +110,12 @@ export const socialLinks: SocialLink[] = [
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I am a Full-Stack Software Engineer with 4+ years of experience in web and mobile app development. Skilled in front-end, back-end, and database management, I deliver high-quality, scalable solutions that boost performance, cut costs, and enhance user experience.",
+    "I am a backend-focused Software Engineer with 4+ years of experience building multi-tenant SaaS platforms, ERP systems, CRM solutions, and business applications. Experienced in Laravel, PHP, MySQL, Livewire, Vue.js, and relational database design, I focus on scalable backend architecture, database performance, clean implementation, and production-ready systems.",
   ],
   facts: [
     { label: "Location", value: site.location },
     { label: "Role", value: `${site.role} @ Codeware Limited` },
-    { label: "Focus", value: "Full-stack web & mobile development" },
+    { label: "Focus", value: "Backend engineering, SaaS & business systems" },
   ],
 };
 
@@ -259,31 +259,31 @@ export const services: ServiceItem[] = [
   {
     title: "Full-Stack Web Development",
     description:
-      "End-to-end web applications with React/Vue front ends and Laravel/PHP back ends, built for performance and long-term maintainability.",
+      "End-to-end web applications with Vue/React front ends and Laravel/PHP back ends, built for performance, scalability, and long-term maintainability.",
     icon: "code",
   },
   {
     title: "Backend & API Development",
     description:
-      "RESTful APIs, business logic, and system integrations built on Laravel and PHP, focused on clean architecture and reliability.",
+      "Backend systems, RESTful APIs, business logic, and third-party integrations built with Laravel and PHP, focused on clean architecture and reliability.",
     icon: "server",
   },
   {
     title: "Database Design & Optimization",
     description:
-      "MySQL schema design, query tuning, and structural refactors to improve performance and keep data integrity as systems grow.",
+      "Relational schema design, query optimization, and structural refactoring to improve performance and preserve data integrity as systems scale.",
     icon: "database",
   },
   {
     title: "ERP & Business Systems",
     description:
-      "Custom ERP modules for production, ordering, invoicing, and reporting — tailored to real operational workflows, not generic templates.",
+      "Custom ERP and business-system modules for production, ordering, invoicing, accounting, and reporting, tailored to real operational workflows.",
     icon: "layers",
   },
   {
     title: "Responsive UI Implementation",
     description:
-      "Pixel-accurate, accessible, mobile-first interfaces with Tailwind CSS that hold up across devices and screen sizes.",
+      "Responsive, accessible, mobile-first interfaces with Tailwind CSS that provide consistent experiences across devices and screen sizes.",
     icon: "smartphone",
   },
 ];
@@ -296,9 +296,9 @@ export const experience: ExperienceItem[] = [
     start: "May 2025",
     end: "Present",
     bullets: [
-      "Developed backend and frontend features, resolved critical bugs, and optimized database structures and queries for scalability.",
-      "Provided emergency technical support and attended client meetings.",
-      "Collaborated closely with frontend and backend teams to ensure seamless integration and high-quality releases.",
+      "Develop and maintain backend features, resolve critical production issues, and optimize database structures and queries for scalability and performance.",
+      "Provide technical support for critical production issues, troubleshoot system failures, and participate in client meetings to understand requirements and deliver effective solutions.",
+      "Collaborate with frontend and backend teams to ensure seamless system integration, maintain code quality, and deliver reliable releases.",
     ],
   },
   {
@@ -308,9 +308,11 @@ export const experience: ExperienceItem[] = [
     start: "Apr 2024",
     end: "Apr 2025",
     bullets: [
-      "Developed backend and frontend features, resolved critical bugs, and generated detailed reports to enhance module stability.",
-      "Refactored and optimized ERP modules, and improved database structures and queries for scalability.",
-      "Provided emergency technical support and collaborated across teams to deliver high-quality releases.",
+      "Developed and maintained backend and frontend features for ERP modules based on business and functional requirements.",
+      "Refactored core ERP modules to improve processing performance and reduce database query load.",
+      "Resolved critical bugs and documented technical findings to improve module stability and maintainability.",
+      "Redesigned key database structures to support scalability as client data volume grew.",
+      "Provided technical support for high-priority client issues and production incidents.",
     ],
   },
   {
@@ -320,9 +322,11 @@ export const experience: ExperienceItem[] = [
     start: "Feb 2023",
     end: "Mar 2024",
     bullets: [
-      "Developed web applications with a focus on backend and frontend development.",
-      "Designed scalable system architectures and optimized databases with efficient schemas and ERD diagrams.",
-      "Collaborated with cross-functional teams and maintained Git workflows.",
+      "Developed backend and frontend features across CRM, ERP, and web portal projects.",
+      "Triaged and resolved bugs, improving system reliability.",
+      "Designed relational database schemas for new modules, focusing on data integrity and query efficiency.",
+      "Contributed to code reviews and documentation to support long-term maintainability.",
+      "Provided support during critical production incidents.",
     ],
   },
   {
@@ -332,7 +336,7 @@ export const experience: ExperienceItem[] = [
     start: "Aug 2022",
     end: "Jan 2023",
     bullets: [
-      "Assisted in the early stages of web application projects, gaining hands-on experience in core software engineering principles.",
+      "Assisted with early-stage web application development and gained hands-on experience in software engineering practices, debugging, and collaborative development.",
     ],
   },
   {
@@ -342,8 +346,8 @@ export const experience: ExperienceItem[] = [
     start: "Jan 2022",
     end: "Apr 2022",
     bullets: [
-      "Worked closely with senior developers to build scalable web applications and responsive, compatible front-end designs.",
-      "Conducted software testing and debugging to ensure quality.",
+      "Worked with senior developers to build web applications and responsive, cross-browser-compatible interfaces.",
+      "Conducted software testing and debugging to identify and resolve issues and maintain application quality.",
     ],
   },
 ];
@@ -358,7 +362,7 @@ export const education: EducationItem[] = [
     details: "Specialized in Software Engineering and Data Science.",
   },
   {
-    degree: "B.Sc in Computer Science and Engineering",
+    degree: "B.Sc. in Computer Science and Engineering",
     institution: "Independent University, Bangladesh (IUB)",
     institutionUrl: "https://iub.ac.bd/",
     start: "2017",
@@ -433,16 +437,16 @@ export const projects: Project[] = [
   {
     title: "Property Management System (PMS)",
     description:
-      "A multi-tenant SaaS Hotel PMS on a DB-per-tenant architecture, with two apps: a Super Admin panel for tenant onboarding, billing, and global hotel data, and a per-hotel Tenant PMS covering front desk, reservations, guest CRM, POS, night audit, and accounting.",
-    tags: ["HTML", "CSS", "Tailwind", "TypeScript", "Inertia.js", "Vite", "Vue.js", "PHP", "Laravel", "Redis", "MySQL"],
+      "Designed and developed a multi-tenant SaaS Hotel PMS using a DB-per-tenant architecture, with two applications: a Super Admin panel for tenant onboarding, billing, and global hotel data, and a per-hotel Tenant PMS covering front desk, reservations, guest CRM, POS, night audit, and accounting.",
+    tags: ["HTML", "CSS", "Tailwind CSS", "TypeScript", "Inertia.js", "Vite", "Vue.js", "PHP", "Laravel", "Redis", "MySQL"],
     category: "Full-stack",
     associatedWith: "Codeware Limited",
   },
   {
     title: "Visa Agency CRM & Management System",
     description:
-        "A multilingual (AR/BN/EN) multi-tenant CRM for a visa services agency — combining a marketing site with a back-office suite covering customer tracking, invoicing & payments, commissions, double-entry accounting, and financial reporting.",
-    tags: ["HTML", "CSS", "Tailwind", "Alpine.js", "Vite", "JavaScript", "PHP", "Laravel", "Livewire", "MySQL"],
+      "Developed a multilingual (AR/BN/EN), multi-tenant CRM for a visa services agency, combining a public-facing marketing website with a back-office platform for customer management, invoicing and payments, commission tracking, double-entry accounting, and financial reporting.",
+    tags: ["HTML", "CSS", "Tailwind CSS", "Alpine.js", "Vite", "JavaScript", "PHP", "Laravel", "Livewire", "MySQL"],
     category: "Full-stack",
     associatedWith: "Codeware Limited (client: Al Zahra Consultancy)",
     live: "https://alzahrabd.com/",
@@ -450,8 +454,8 @@ export const projects: Project[] = [
   {
     title: "Bangladesh Medical University (BMU)",
     description:
-      "A university administration and research platform with an end-to-end IRB ethics-approval workflow, governance portals for Academic & Syndicate meetings with signed attendance confirmation, and a multilingual (EN/BN) CMS with per-department subdomains and news publishing.",
-    tags: ["HTML", "CSS", "Tailwind", "Alpine.js", "PHP", "Laravel", "Livewire", "Filament", "MySQL"],
+      "Developed a university administration and research platform with an end-to-end IRB ethics-approval workflow, governance portals for Academic and Syndicate meetings with signed attendance confirmation, and a multilingual (EN/BN) CMS with per-department subdomains and news publishing.",
+    tags: ["HTML", "CSS", "Tailwind CSS", "Alpine.js", "PHP", "Laravel", "Livewire", "Filament", "MySQL"],
     category: "Full-stack",
     associatedWith: "Codeware Limited",
     live: "https://www.bmu.ac.bd/",
@@ -459,12 +463,12 @@ export const projects: Project[] = [
   {
     title: "Winrooms",
     description:
-      "A hotel & accommodation booking platform for searching, comparing, and booking rooms, with dynamic pricing, real-time availability, and partner dashboards for property management.",
+      "Developed a hotel and accommodation booking platform for searching, comparing, and booking rooms, with dynamic pricing, real-time availability, and partner dashboards for property management.",
     tags: [
       "HTML",
       "CSS",
       "Bootstrap",
-      "Tailwind",
+      "Tailwind CSS",
       "Alpine.js",
       "Vite",
       "JavaScript",
@@ -484,12 +488,12 @@ export const projects: Project[] = [
   {
     title: "Etripi",
     description:
-      "A hotel & tour booking platform for the Bangladesh market, with a partner portal for rate/availability management, local payment gateway integration, automated invoicing, and a dedicated tour booking module.",
+      "Developed a hotel and tour booking platform for the Bangladesh market, including a partner portal for rate and availability management, local payment gateway integration, automated invoicing, and a dedicated tour booking module.",
     tags: [
       "HTML",
       "CSS",
       "Bootstrap",
-      "Tailwind",
+      "Tailwind CSS",
       "Alpine.js",
       "Vite",
       "JavaScript",
@@ -509,7 +513,7 @@ export const projects: Project[] = [
   {
     title: "goRMG ERP",
     description:
-      "A multi-vendor ERP for the garments industry, deployed across 20+ clients to streamline operations; contributed to Protracker, a cloud-based tool for tracking orders, production, shipping, and invoicing.",
+      "Developed ERP modules for the garments industry, deployed across 10+ clients to streamline operations, and contributed to Protracker, a cloud-based platform for managing orders, production, shipping, and invoicing.",
     tags: [
       "HTML",
       "CSS",
@@ -526,16 +530,16 @@ export const projects: Project[] = [
   {
     title: "Laboratory Information Management System (LIMS)",
     description:
-      "LIMS for the Wyss Institute at Harvard — streamlines sample management, automates workflows, ensures data integrity, and improves efficiency in research and testing facilities.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "Tailwind", "PHP", "Laravel", "MySQL"],
+      "Developed features for a Laboratory Information Management System for the Wyss Institute at Harvard to support sample management, workflow automation, data integrity, and research and testing operations.",
+    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "Tailwind CSS", "PHP", "Laravel", "MySQL"],
     category: "Full-stack",
     associatedWith: "DevTechGuru Ltd. (client: Wyss Institute, Harvard)",
   },
   {
     title: "Wyss Diagnostics Accelerator (DxA) Web Presence",
     description:
-      "A visually engaging, user-friendly website built to enhance online presence, improve navigation, and highlight innovative research for the Wyss Institute's DxA program at Harvard.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "Tailwind", "WordPress", "PHP"],
+      "Built the public-facing WordPress website for the Wyss Diagnostics Accelerator program at the Wyss Institute at Harvard, showcasing the initiative and its research focus.",
+    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "Tailwind CSS", "WordPress", "PHP"],
     category: "Frontend",
     associatedWith: "DevTechGuru Ltd. (client: Wyss Institute, Harvard)",
     live: "https://wyss.harvard.edu/collaboration/wyss-diagnostics-accelerator/",
@@ -543,16 +547,16 @@ export const projects: Project[] = [
   {
     title: "GURU ERP",
     description:
-      "A multi-vendor, web-based ERP solution to streamline business processes, improve inter-departmental efficiency, and enhance data management — deployed for Three Arrows Plastic Factory (Saudi Arabia) and Uniglory Ltd.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "Ajax", "PHP", "MySQL"],
+      "Developed a web-based ERP solution for Three Arrows Plastic Factory (Saudi Arabia) and Uniglory Ltd. to streamline business processes, improve interdepartmental efficiency, and enhance data management.",
+    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "AJAX", "PHP", "MySQL"],
     category: "Full-stack",
     associatedWith: "DevTechGuru Ltd. (clients: Three Arrows Plastic Factory, Uniglory Ltd.)",
   },
   {
     title: "CMS for QK Ahmad Foundation",
     description:
-      "A user-friendly content management platform enabling easy creation, editing, organization, and publishing of text, images, and video content.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "Ajax", "PHP", "MySQL"],
+      "Developed a web-based CMS for creating, editing, organizing, and publishing digital content, including text, images, and videos.",
+    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "AJAX", "PHP", "MySQL"],
     category: "Full-stack",
     associatedWith: "DevTechGuru Ltd.",
     live: "https://qkaf.org/home.php",
@@ -569,7 +573,7 @@ export const projectFilters = [
 export const contact = {
   heading: "Get In Touch",
   subheading:
-    "Have a project in mind or just want to say hi? My inbox is always open.",
+    "Have a project in mind or want to discuss a software engineering opportunity? My inbox is open.",
   formspreeEndpoint: "https://formspree.io/f/xwleqzln",
 };
 
