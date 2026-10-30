@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Moon, Sun, Download } from "lucide-react";
 import { site } from "../data/content";
 import { useTheme } from "../hooks/useTheme";

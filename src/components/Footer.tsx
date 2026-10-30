@@ -2,6 +2,8 @@ import { ArrowUp } from "lucide-react";
 import { useI18n } from "../hooks/useI18n";
 import { useNavItems } from "../lib/nav";
 
+const CURRENT_YEAR = String(new Date().getFullYear());
+
 export default function Footer() {
   const { t } = useI18n();
   const navItems = useNavItems();
@@ -29,7 +31,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
         <p className="text-sm text-muted">
           {t("footer.copyright", {
-            year: String(new Date().getFullYear()),
+            year: CURRENT_YEAR,
             name: t("common.name"),
           })}
         </p>

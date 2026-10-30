@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { projectFilters, projects, type Project } from "../data/content";

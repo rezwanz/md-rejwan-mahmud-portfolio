@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import {
   Command,
   Search,
@@ -92,15 +92,16 @@ export default function CommandPalette() {
   }, [actions, query]);
 
   useEffect(() => {
-    setActiveIndex(0);
-  }, [query, open]);
-
-  useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       const isMeta = event.metaKey || event.ctrlKey;
       if (isMeta && event.key.toLowerCase() === "k") {
         event.preventDefault();
-        setOpen((prev) => !prev);
+        if (open) {
+          close();
+        } else {
+          setOpen(true);
+          setActiveIndex(0);
+        }
         return;
       }
       if (!open) return;
@@ -135,7 +136,10 @@ export default function CommandPalette() {
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setOpen(true);
+          setActiveIndex(0);
+        }}
         aria-label={t("commands.open_aria")}
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-border-light bg-bg-light/90 px-4 py-3 text-sm font-medium text-muted shadow-lg backdrop-blur-lg transition-colors hover:border-primary hover:text-primary dark:border-border dark:bg-bg/90 sm:px-3 sm:py-2"
       >
@@ -171,7 +175,10 @@ export default function CommandPalette() {
                   ref={inputRef}
                   type="text"
                   value={query}
-                  onChange={(event) => setQuery(event.target.value)}
+                  onChange={(event) => {
+                    setQuery(event.target.value);
+                    setActiveIndex(0);
+                  }}
                   placeholder={t("commands.placeholder")}
                   className="w-full bg-transparent text-sm outline-none placeholder:text-muted"
                 />

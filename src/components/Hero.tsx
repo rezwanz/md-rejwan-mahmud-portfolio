@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowRight, Mail } from "lucide-react";
 import { socialLinks } from "../data/content";
 import { useTypewriter } from "../hooks/useTypewriter";

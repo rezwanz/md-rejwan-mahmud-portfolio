@@ -1,15 +1,17 @@
 # Md. Rejwan Mahmud — Portfolio
 
-A single-page portfolio built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion. Fully static — deploys to Cloudflare Pages (or GitHub Pages via the included GitHub Actions workflow).
+A single-page portfolio built with React, Vite, TypeScript, Tailwind CSS, and Motion. Fully static — deploys to Cloudflare Pages (or GitHub Pages via the included GitHub Actions workflow).
 
 ## Stack
 
 - React + Vite + TypeScript
 - Tailwind CSS v4 (teal design system, dark mode by default with a toggle)
-- Framer Motion (scroll reveals, marquee, page transitions)
+- Motion (`motion/react`) — scroll reveals, marquee, page transitions
 - lucide-react + react-icons (UI and brand/skill icons)
 
 ## Getting started
+
+Requires Node.js 24 LTS (or another even-numbered release supported by Vitest 5 and jsdom 30).
 
 ```bash
 npm install

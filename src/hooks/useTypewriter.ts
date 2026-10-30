@@ -6,6 +6,13 @@ interface UseTypewriterOptions {
   pauseTime?: number;
 }
 
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+}
+
 export function useTypewriter(
   words: string[],
   {
@@ -15,19 +22,14 @@ export function useTypewriter(
   }: UseTypewriterOptions = {},
 ) {
   const [wordIndex, setWordIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [reducedMotion] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  const [text, setText] = useState(() =>
+    prefersReducedMotion() ? (words[0] ?? "") : "",
   );
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [reducedMotion] = useState(prefersReducedMotion);
 
   useEffect(() => {
-    if (reducedMotion) {
-      setText(words[0] ?? "");
-      return;
-    }
+    if (reducedMotion) return;
 
     const currentWord = words[wordIndex % words.length];
 
@@ -37,9 +39,11 @@ export function useTypewriter(
     }
 
     if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setWordIndex((i) => (i + 1) % words.length);
-      return;
+      const timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setWordIndex((i) => (i + 1) % words.length);
+      }, 0);
+      return () => clearTimeout(timeout);
     }
 
     const timeout = setTimeout(
